@@ -68,7 +68,9 @@ app.use(
 
 app.use(
   i18n({
-    translationsPath: path.join(__dirname, "lang"), // use here. Specify translations files path.
+    translationsPath: path.join(__dirname, "lang"),
+    // TODO: 先找尋可用的翻譯文件檔案，若無改採google trnaslate
+    // use here. Specify translations files path.
     siteLangs: [
       "ar",
       "en",
