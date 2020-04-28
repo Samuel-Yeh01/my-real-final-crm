@@ -71,20 +71,7 @@ app.use(
     translationsPath: path.join(__dirname, "lang"),
     // TODO: 先找尋可用的翻譯文件檔案，若無改採google trnaslate
     // use here. Specify translations files path.
-    siteLangs: [
-      "ar",
-      "en",
-      "cn",
-      "fr",
-      "he",
-      "es",
-      "ru",
-      "ge",
-      "ja",
-      "ko",
-      "it",
-      "hu",
-    ], // add new locales
+    siteLangs: ["en", "ja"], // add new locales
     cookieLangName: "ulang",
     browserEnable: "true",
     textsVarName: "translation",
