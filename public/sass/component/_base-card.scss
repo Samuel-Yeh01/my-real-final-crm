@@ -1,0 +1,117 @@
+/*===Card=====*/
+.card {
+	.card-title {
+		color: $card-title-color;
+		font-size: $card-title-font-size;
+		font-weight: $card-title-font-weight;
+		margin: 0;
+		text-transform: capitalize;
+	}
+
+	.card-footer {
+		padding-top: 1.5rem;
+	}
+
+	.dropdown-content {
+		height: auto !important;
+		width: 150px !important;
+		max-width: 150px !important;
+		box-shadow: $card-dropdown-box-shadow;
+		li {
+			min-height: 30px;
+			&:hover {
+				background: transparent;
+			}
+		}
+
+		a {
+			background-color: $card-dropdown-bg;
+			padding: 0.5rem 16px;
+			font-size: .875rem;
+			display: block;
+			margin: .3125rem;
+			box-shadow: $mat-box-shadow;
+			cursor: pointer;
+         color: inherit;
+         &.d-fullscreen{
+            i{
+               color: $primary-color;
+            }
+         }
+         &.d-reload{
+            i{
+               color: $success-color;
+            }
+         }
+         &.d-close{
+            i{
+               color: $error-color;
+            }
+         }
+
+			i {
+				margin-right: 0.4rem;
+				font-size: 0.7rem;
+			}
+		}
+	}
+}
+
+.card.card-full {
+	.card-header {
+		padding-left: 24px;
+		padding-top: 24px;
+		padding-right: 24px;
+	}
+
+	.card-content {
+		padding: 0;
+	}
+
+	.card-pad-x {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}
+
+/*===Card Preloader=====*/
+.section-preloader-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: $card-preloader-bg-color;
+	text-align: center;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+   z-index: 99;
+   .spinner-layer{
+      border-color: $card-preloader-color !important;
+   }
+	&.display {
+		display: flex !important;
+	}
+}
+
+@media only screen and (max-width:1630px) {
+	.weekly-sales-widegt.set-resp-margin {
+		margin-bottom: 33px !important;
+	}
+}
+
+@media only screen and (max-width:1470px) {
+	.weekly-sales-widegt.set-resp-margin {
+		margin-bottom: 42px !important;
+	}
+}
+
+/*===Card Select=====*/
+.card .select-wrapper{
+   .dropdown-content {
+      max-width:280px !important;
+      width:280px !important;
+   }
+}

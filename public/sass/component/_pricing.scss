@@ -1,0 +1,52 @@
+/*===Pricing Styling=====*/
+.plan-info-listing li {
+	margin-bottom: 0.7rem;
+
+	i {
+		margin-right: .9375rem;
+	}
+}
+
+.plan-info {
+	background-color: #dde6f3;
+	padding: .625rem 3.125rem;
+}
+
+.pricing-body,
+.pricing-head {
+	padding: 1.875rem 3.125rem;
+}
+
+.fixed-pricing .pricing-box {
+	border-right: 1px solid #d7dce4;
+}
+
+.grid-inline {
+	.card-text {
+		font-size: 1rem;
+	}
+}
+
+.column-masonary {
+	column-count: 3;
+	column-gap: 1.5rem;
+	.card-text{
+		color: $faq-grid-color;
+	}
+}
+
+.new-mail .mail-title span{
+	vertical-align: super;
+}
+
+@media only screen and (max-width:991px) {
+	.column-masonary {
+		column-count: 2;
+	}
+}
+
+@media only screen and (max-width:560px) {
+	.column-masonary {
+		column-count: 1;
+	}
+}

@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/*------------------------------------------*/
+/*--Table Of Contents--*/
+/*------------------------------------------*/
+/*============================ 
+1.App Variables
+=============================*/
+/*============================ 
+2.Materialize
+=============================*/
+/*============================ 
+3. Customs
+=============================*/
+/* 3.1 Components */
+/* 3.2 Core */
+/* 3.3 Utility*/
+/*--------------------------------------*/
+
+
+/*============================ 
+1.App File Variables
+=============================*/
+@import "app-variables";
+
+/*============================ 
+2.Materialize
+=============================*/
+@import "materialize/components/color-variables";
+@import "materialize/components/color-classes";
+@import "materialize/components/variables";
+@import "materialize/components/normalize";
+@import "materialize/components/global";
+@import "materialize/components/badges";
+@import "materialize/components/icons-material-design";
+@import "materialize/components/grid";
+@import "materialize/components/navbar";
+@import "materialize/components/typography";
+@import "materialize/components/transitions";
+@import "materialize/components/cards";
+@import "materialize/components/toast";
+@import "materialize/components/tabs";
+@import "materialize/components/tooltip";
+@import "materialize/components/buttons";
+@import "materialize/components/dropdown";
+@import "materialize/components/waves";
+@import "materialize/components/modal";
+@import "materialize/components/collapsible";
+@import "materialize/components/chips";
+@import "materialize/components/materialbox";
+@import "materialize/components/forms/forms";
+@import "materialize/components/table_of_contents";
+@import "materialize/components/sidenav";
+@import "materialize/components/preloader";
+@import "materialize/components/slider";
+@import "materialize/components/carousel";
+@import "materialize/components/tapTarget";
+@import "materialize/components/pulse";
+@import "materialize/components/datepicker";
+@import "materialize/components/timepicker";
+
+
+/*============================ 
+3. Customs
+=============================*/
+/* 3.1 Components */
+
+@import "component";
+
+/* 3.2 Core */
+
+@import "core";
+
+/* 3.3 Utility*/
+
+@import "utility";

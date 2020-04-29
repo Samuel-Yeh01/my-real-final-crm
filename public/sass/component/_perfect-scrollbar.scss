@@ -1,0 +1,146 @@
+
+$color_gallery_approx: #eee;
+$color_silver_chalice_approx: #aaa;
+$color_mountain_mist_approx: #999;
+
+.ps {
+	overflow: hidden!important;
+	overflow-anchor: none;
+	touch-action: auto;
+	.ps__rail-x {
+		&.ps--clicking {
+			background-color: $color_gallery_approx;
+			opacity: .9;
+		}
+		&:focus {
+			background-color: $color_gallery_approx;
+			opacity: .9;
+		}
+		&:hover {
+			background-color: $color_gallery_approx;
+			opacity: .9;
+		}
+	}
+	.ps__rail-y {
+		&.ps--clicking {
+			background-color: $color_gallery_approx;
+			opacity: .9;
+		}
+		&:focus {
+			background-color: $color_gallery_approx;
+			opacity: .9;
+		}
+		&:hover {
+			background-color: $color_gallery_approx;
+			opacity: .9;
+		}
+	}
+	&:hover > {
+		.ps__rail-x {
+			opacity: .6;
+		}
+		.ps__rail-y {
+			opacity: .6;
+		}
+	}
+}
+
+.ps__rail-x {
+	display: none;
+	opacity: 0;
+	transition: background-color .2s linear, opacity .2s linear;
+	height: 15px;
+	bottom: 0;
+	position: absolute;
+	&.ps--clicking .ps__thumb-x {
+		background-color: $color_mountain_mist_approx;
+		height: 11px;
+	}
+	&:focus > .ps__thumb-x {
+		background-color: $color_mountain_mist_approx;
+		height: 11px;
+	}
+	&:hover > .ps__thumb-x {
+		background-color: $color_mountain_mist_approx;
+		height: 11px;
+	}
+}
+
+.ps__rail-y {
+	display: none;
+	opacity: 0;
+	transition: background-color .2s linear, opacity .2s linear;
+	width: 15px;
+	right: 0;
+	position: absolute;
+	&.ps--clicking .ps__thumb-y {
+		background-color: $color_mountain_mist_approx;
+		width: 11px;
+	}
+	&:focus > .ps__thumb-y {
+		background-color: $color_mountain_mist_approx;
+		width: 11px;
+	}
+	&:hover > .ps__thumb-y {
+		background-color: $color_mountain_mist_approx;
+		width: 11px;
+	}
+}
+
+.ps__thumb-x {
+	background-color: $color_silver_chalice_approx;
+	border-radius: 6px;
+	transition: background-color .2s linear, height .2s ease-in-out;
+	height: 6px;
+	bottom: 2px;
+	position: absolute;
+}
+
+.ps__thumb-y {
+	background-color: $color_silver_chalice_approx;
+	border-radius: 6px;
+	transition: background-color .2s linear, width .2s ease-in-out;
+	width: 6px;
+	right: 2px;
+	position: absolute;
+}
+
+@supports(-ms-overflow-style:none) {
+	.ps {
+		overflow: auto!important;
+	}
+}
+
+@media screen and(-ms-high-contrast:active),
+(-ms-high-contrast:none) {
+	.ps {
+		overflow: auto!important;
+	}
+}
+
+.ps--active-x > .ps__rail-x {
+	display: block;
+	background-color: transparent;
+}
+
+.ps--active-y > .ps__rail-y {
+	display: block;
+	background-color: transparent;
+}
+
+.ps--focus > {
+	.ps__rail-x {
+		opacity: .6;
+	}
+	.ps__rail-y {
+		opacity: .6;
+	}
+}
+
+.ps--scrolling-x > .ps__rail-x {
+	opacity: .6;
+}
+
+.ps--scrolling-y > .ps__rail-y {
+	opacity: .6;
+}

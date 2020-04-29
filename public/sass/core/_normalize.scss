@@ -1,0 +1,35 @@
+ body {
+ 	overflow: hidden;
+ }
+
+ input::placeholder,
+ textarea::placeholder {
+ 	color: rgba(0, 0, 0, .8);
+ }
+
+ .z-depth-1,
+ nav,
+ .card-panel,
+ .card,
+ .toast,
+ .btn,
+ .btn-large,
+ .btn-small,
+ .btn-floating,
+ .dropdown-content,
+ .collapsible,
+ .sidenav {
+ 	box-shadow: $mat-box-shadow !important;
+ }
+
+ .row {
+ 	margin-left: -0.75rem;
+ 	margin-right: -0.75rem;
+ }
+
+ .canvas-100 {
+ 	canvas {
+ 		width: 100% !important;
+ 		height: 100% !important;
+ 	}
+ }

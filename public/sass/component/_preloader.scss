@@ -1,0 +1,24 @@
+/*===Preloader Styling=====*/
+.preloader-wrapper-sec {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 99;
+	background:$pre-loader-bg;
+	justify-content: center;
+	display: flex;
+   align-items: center;
+   .spinner-red-only {
+      border-color: $pre-loader-color !important;
+   }
+}
+
+.session-page .preloader-wrapper-sec {
+   background: rgba(255, 255, 255, 1);
+   .spinner-red-only {
+      border-color: $primary-color !important;
+   }
+}

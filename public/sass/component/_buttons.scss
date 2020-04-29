@@ -1,0 +1,43 @@
+/*===Button Icon=====*/
+button.btn-icon {
+	-ms-flex-pack: center;
+	background: transparent;
+	box-shadow: none !important;
+	width: 36px;
+	height: 36px;
+	display: inline-block;
+	border: 0;
+	padding: 0;
+	text-align: center;
+} 
+//For content in the button
+.btn-content {
+	-ms-flex: 1 0 auto;
+	-ms-flex-align: center;
+	-ms-flex-pack: center;
+	-webkit-box-align: center;
+	-webkit-box-flex: 1;
+	-webkit-box-pack: center;
+	-webkit-transition: .3s cubic-bezier(.25, .8, .5, 1);
+	align-items: center;
+	border-radius: inherit;
+	color: inherit;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex: 1 0 auto;
+	justify-content: center;
+	margin: 0 auto;
+	position: relative;
+	transition: .3s cubic-bezier(.25, .8, .5, 1);
+	white-space: nowrap;
+	width: inherit;
+}
+
+body .setcard-btn-width {
+	display: block !important;
+	.btn {
+		height: auto !important;
+		min-height: $button-height;
+	}
+}

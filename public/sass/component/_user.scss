@@ -1,0 +1,119 @@
+/*==User Profile==*/
+
+.usr-profile {
+   .media-listing {
+      li>div:first-child {
+         width: 65px;
+      }
+
+      li .media-body {
+         width: calc(100% - 65px);
+      }
+   }
+
+   .small {
+      color: $small-color;
+      font-size: 14px;
+   }
+}
+
+
+.user-activity ul li {
+   border-right: 1px solid #d5d5d5;
+   padding: 0 2rem;
+
+   span {
+      font-size: 1.5rem;
+      margin: 0 0.4rem;
+   }
+
+   &:last-child {
+      border: 0;
+   }
+}
+
+.session-page .validate-label {
+   pointer-events: none;
+}
+
+.customer-overview-spacing,
+.card-spacing {
+   .card-header {
+      min-height: 75px;
+   }
+
+   .card-data {
+      height: calc(100% - 75px);
+   }
+}
+
+.edu-list-item {
+   .edu-info {
+      width: calc(100% - 77px);
+   }
+
+   .edu-year {
+      white-space: nowrap;
+      width: 77px;
+      color: $text-muted;
+   }
+}
+
+.user-profile-wrapper .profile-top img {
+   min-height: 165px;
+}
+
+@media only screen and (max-width:576px) {
+   .usr-profile {
+      .media.d-flex {
+         display: block !important;
+      }
+
+      .media-listing li>div:first-child {
+         margin-bottom: 1rem;
+      }
+
+      .media-listing li .media-body {
+         width: 100%;
+      }
+   }
+
+   .user-activity ul li {
+      border-right: 0;
+   }
+}
+
+.user-card-widget {
+   background-size: cover;
+   display: flex;
+   min-height: 300px;
+   background-position: center center;
+   .user-card-widget-content {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      transition: all 0.3s ease-in-out 0s;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding-top: 1.5rem;
+      * {
+         color: #fff;
+      }
+   }
+   .user-card-widget-social {
+      position: absolute;
+      right: 0.8rem;
+      transition: all 0.3s ease-in-out 0s;
+      ul li {
+         display: block;
+      }
+   }
+   &:hover{
+      .user-card-widget-social {
+         right: 1.1rem;
+      }
+      .user-card-widget-content {
+         background: rgba(0, 0, 0, 0.6);
+      }
+   }
+}

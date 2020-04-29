@@ -1,0 +1,416 @@
+//@extend-elements
+//original selectors
+//.ais-price-ranges--link, .ais-refinement-list--item, .ais-star-rating--link
+%extend_1 {
+	font-size: 0.9rem;
+	line-height: 1.4rem;
+	margin-bottom: 8px;
+	display: block;
+	color: $body-color;
+}
+
+//original selectors
+//.ais-star-rating--star, .ais-star-rating--star__empty
+%extend_2 {
+	display: inline-block;
+	width: 1rem;	
+}
+
+//original selectors
+//.ais-pagination li.ais-pagination--item__previous span, .ais-pagination li.ais-pagination--item__previous a, .ais-pagination li.ais-pagination--item__next span, .ais-pagination li.ais-pagination--item__next a
+%extend_3 {
+	padding-top: 0;
+	font: 0/0 a;
+	display: inline-block;
+	vertical-align: -6px;
+	i{
+		line-height: 1.3;
+	}
+}
+@media only screen and (max-width:991px){
+	.ais-pagination li.ais-pagination--item__previous a i{
+		line-height: 1.4;
+		
+	}
+}
+//original selectors
+//.product-table .price-wrap .price-field, .product-table .total-wrap .price-field
+%extend_4 {
+	width: calc(100% - 15px);
+	box-sizing: border-box !important;
+	height: auto !important;
+	border: 0 !important;
+	margin-bottom: 0;
+	min-width: 30px;
+}
+
+/*===Product Wrapper=====*/
+.product-wrapper {
+	.product {
+		background-color: #fff;
+		.price-type-wrap {
+			border-bottom: 1px solid $e-shop-border;
+		}
+		.product-picture {
+			min-height: 160px;
+			text-align: center;
+			img {
+				display: inline-block;
+			}
+		}
+	}
+	.col {
+		min-height: 100%;
+	}
+}
+
+/*===Shop Elements=====*/
+.style-shop-widget {
+	background-color: #fff;
+	.ais-search-box {
+		.ais-search-box--magnifier-wrapper {
+			display: none !important;
+		}
+		.ais-search-box--reset-wrapper {
+			display: none !important;
+		}
+	}
+	.sbx-sffv__submit {
+		display: none !important;
+	}
+	.sbx-sffv__reset {
+		display: none !important;
+	}
+	.ais-clear-all--link {
+		color: #fff;
+	}
+	.sbx-sffv__input {
+		margin-bottom: 1.4rem !important;
+	}
+	> div:first-child {
+		margin-bottom: 1.5rem;
+		padding: 1.5rem;
+	}
+	a.facet-item {
+		color: $body-color;
+	}
+	.ais-rating .ais-rating__item a .ais-rating__star {
+		color: $e-shop-rating !important;
+		font-size: 1.25rem;
+	}
+}
+.ais-price-ranges--list {
+	margin-bottom: 1.5rem;
+}
+.ais-price-ranges--separator {
+	width: 16%;
+	line-height: 2.2;
+	text-align: center;
+	float: left;
+	margin-bottom: 0.6rem;
+}
+.ais-price-ranges--label {
+	float: left;
+	margin-bottom: 0.6rem;
+	display: flex;
+	width: 42%;
+	.ais-price-ranges--currency {
+		margin-right: 0;
+		width: 15%;
+		line-height: 2.6;
+	}
+	.ais-price-ranges--input {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box !important;
+		line-height: 1;
+		height: auto !important;
+		padding: 0.5rem !important;
+		appearance: none !important;
+		width: 80% !important;
+		border: 1px solid $e-shop-border !important;
+		font-size: 13px !important;
+	}
+}
+.ais-price-ranges form.ais-price-ranges--form{
+   max-width: 230px;
+} 
+.ais-price-ranges--button {
+	background-color: $primary-color;
+	border: 0;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 12px;
+	margin: 0 0.25rem;
+	padding: 5.5px 14px;
+}
+.ais-hierarchical-menu {
+	.facet-item {
+		line-height: 1.4rem;
+		margin-bottom: 4px;
+		display: block;
+		.facet-name {
+			display: flex;
+			margin-bottom: 8px;
+			i {
+				margin-right: 7px;
+				line-height: 1.6;
+			}
+		}
+	}
+	.ais-hierarchical-menu--list {
+		padding-left: 1rem;
+	}
+	.ais-hierarchical-menu--list__lvl0 {
+		padding-left: 0;
+	}
+	.ais-hierarchical-menu--list__lvl1 .facet-item {
+		font-size: 0.96rem;
+	}
+	.ais-hierarchical-menu--list__lvl2 .facet-item {
+		font-size: 0.96rem;
+	}
+	.ais-hierarchical-menu--list__lvl3 .facet-item {
+		font-size: 0.96rem;
+	}
+	.ais-hierarchical-menu--list__lvl4 .facet-item {
+		font-size: 0.96rem;
+	}
+}
+.ais-price-ranges--link {
+	@extend %extend_1;
+}
+.ais-refinement-list--item {
+	@extend %extend_1;
+}
+.ais-star-rating--link {
+	@extend %extend_1;
+	span:nth-child(5){
+		margin-right: 0.4rem;
+	}
+	.ais-star-rating--count{
+		margin-left: 0.08rem;
+	}
+}
+.ais-star-rating--star::before {
+	content: "★";
+	color: $e-shop-rating-unfill;
+	font-size: 1.3rem;
+}
+.ais-star-rating--star {
+	@extend %extend_2;
+}
+.ais-star-rating--star__empty {
+	@extend %extend_2;
+}
+.ais-star-rating--star__empty::before {
+	font-size: 1.3rem;
+	content: "☆";
+	color: $e-shop-rating-unfill;
+}
+
+/*===Pagination=====*/
+.ais-pagination {
+	display: flex;
+	flex: 1 1 auto;
+	margin-bottom: 1.5rem;
+	li {
+		display: inline-block;
+		padding: 0 4px;
+		border: 1px solid $e-shop-border;
+		border-right: 0;
+		width: 3rem;
+		height: 2rem;
+		text-align: center;
+		a {
+			padding-top: 2.5px;
+			display: inline-block;
+			font-size: 0.9rem;
+			line-height: 1.7;
+		}
+		span {
+			padding-top: 2.5px;
+		}
+		&:last-child {
+			border-right: 1px solid $e-shop-border;
+		}
+		&.ais-pagination--item__previous {
+			vertical-align: 2.2px;
+			span {
+				@extend %extend_3;
+				i::before {
+					font-size: 1.4rem;
+				}
+			}
+			a {
+				@extend %extend_3;
+				i::before {
+					font-size: 1.4rem;
+				}
+			}
+		}
+		&.ais-pagination--item__next {
+			vertical-align: 2.5px;
+			span {
+				@extend %extend_3;
+				i::before {
+					font-size: 1.4rem;
+				}
+			}
+			a {
+				@extend %extend_3;
+				i::before {
+					font-size: 1.4rem;
+				}
+			}
+		}
+		.ais-pagination--link i::before {
+			display: inline-block;
+		}
+	}
+	.ais-pagination--item__disabled i::before {
+		color: $e-shop-border;
+	}
+}
+// @media only screen and (max-width:560px){	
+// 	.ais-pagination {
+// 		display: block;
+// 	}
+// }
+.ais-stats--body{
+	color:$text-muted;
+}
+.ais-stats--time {
+	display: block;
+	font-style: italic;
+	margin-top: 0.2rem;
+}
+.ais-refinement-list .facet-item span.facet-count,.ais-stats--body,.ais-hierarchical-menu .facet-item .facet-name,.product-desc-wrapper .product-price,.product-desc-wrapper .product-type {
+	font-size: 0.9rem;
+}
+
+/*===Product Table=====*/
+.product-table {
+	td {
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+	}
+	th {
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+	}
+	.price-wrap,.total-wrap {
+		span {
+			float: left;
+			width: 15px;
+         	line-height: 1.3;
+		}
+		.price-field {
+			float: left;
+			@extend %extend_4;
+		}
+   }
+   .price-wrap{
+      span,.price-field{
+         color: $error-color;
+      }
+   }
+   .total-wrap{
+      span,.price-field{
+         color: $body-color;
+      }
+   }	
+	input.qty-field {
+		padding:0.45rem;
+		line-height: 1;
+		height: auto;
+		border: 1px solid $primary-color-light;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 5px;
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+		margin-bottom: 0;
+		&:focus {
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: none !important;
+			border: 1px solid $primary-color-light !important;
+		}
+	}
+}
+/*===Checkout Page=====*/
+.checkout-page {
+	background-color: #fff;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 1px 15px 1px $checkout-page-box-shadow;
+	table tr {
+		border: 0;
+	}
+	.input-field .prefix {
+		color: $body-color;
+	}
+}
+.new-card-page {
+	background-color:#fff ;
+}
+
+/*===Style Table=====*/
+.style-table {
+	tr {
+		border: 0 !important;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: all 0.4s linear;
+	}
+	&.table-spacing {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 1px 15px 1px $box-shadow-dark !important;
+		border: 0 !important;
+		td {
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
+		}
+		th {
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
+		}
+		&.input-height {
+			height: 2rem !important;
+		}
+	}
+}
+.set-box-shadow {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 1px 15px 1px $box-shadow-dark !important;
+	border: 0 !important;
+	&.input-height {
+		height: 2rem !important;
+	}
+}
+.ais-refinement-list .facet-item {
+	display: flex;
+	flex: auto;
+	align-items: center;
+	overflow-wrap: break-word;
+	input {
+		position: relative;
+		opacity: 1;
+		margin-right: 0.5rem;
+	}
+	span {
+		&.facet-count {
+			margin-left: auto;
+			padding: 0;
+		}
+		&.facet-count::before {
+			content: none;
+		}
+		&.facet-count::after {
+			content: none;
+		}
+	}
+}
+select.ais-sort-by-selector {
+	display: block;
+}
+
+.brands-style .searchbox .sbx-sffv__input{
+   padding-left:5px;
+}

@@ -1,0 +1,15 @@
+/*====BreeadCrumb Styling====*/
+.breadcrumb-wrapper {
+	background: $breadcrumb-bg-color;
+	margin-bottom: 1.5rem;
+	.breadcrumb {
+		color: $breadcrumb-font-color;
+		font-size: $breadcrumb-font-size;
+		font-weight: $breadcrumb-font-weight;
+		word-wrap: break-word;
+		&:before {
+			color: $breadcrumb-font-color;
+			vertical-align: middle;
+		}
+	}
+}

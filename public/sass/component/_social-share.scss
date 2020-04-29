@@ -1,0 +1,54 @@
+/*===Socail Share Cards==*/
+
+.facebook {
+	.social-icon {
+		width: 70px;
+		height: 70px;
+		text-align: center;
+		line-height: 70px;
+		border: 1px solid #eee;
+		font-size: 1.5rem;
+		background: #fafafa;
+      transition: all 0.3s ease-in;
+      margin-right: 5px;
+	}
+
+	> .social-desc {
+		width: calc(100% - 70px);
+      text-align: center;
+      > span{
+         width: 49%;
+      }
+	}
+}
+.social-share-wrap{
+	&:hover .facebook{
+		.social-icon { 
+			background: #5d9aff;
+			color: #fff;
+		}
+	}
+}
+@media only screen and (min-width:1450px){
+   .facebook > .social-desc > span{
+      width:40%;
+   }
+}
+@media only screen and (min-width:1200px) and (max-width:1340px){
+   .facebook .social-icon{
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+   }
+}
+
+@media only screen and (max-width:500px){
+	.social-share-spaceing.row{
+		.col{
+			width: 100%;
+			.facebook > .social-desc > span{
+				width: 45%;
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+/*====Typography====*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+
+	margin-top: 0;
+	font-weight: $heading-font-weight;
+	 color: $body-color;
+}
+
+body{
+   color: $body-color;
+}
+.base-color {
+	color: #727891;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}

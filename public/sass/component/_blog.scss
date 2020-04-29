@@ -1,0 +1,13 @@
+/*------Blog Cover Image Card -------*/
+.blog-bg-wrap {
+	.card {
+		background: transparent !important;
+	}
+	.blog-card {
+		background: url("../images/blog-5.jpg") no-repeat 50%;
+		background-size: cover;
+		overflow: hidden;
+
+	}
+
+}

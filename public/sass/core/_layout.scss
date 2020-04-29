@@ -1,0 +1,102 @@
+/*====App Main Content====*/
+.app-main-content {
+	padding: 64px 0 0 $sidebar-width;
+	display: flex;
+	flex: 1 0 auto;
+	max-width: 100%;
+	transition: none;
+	background: $main-container-bg;
+	transition: padding $transition-time ease;
+}
+/*====App Wrap====*/
+.app-wrap {
+	backface-visibility: hidden;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	max-width: 100%;
+	min-height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.app-content-wrap {
+	height: calc(100vh - 64px);
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: $main-container-gap;
+}
+
+.app-content-wrap {
+	width: 100%;
+}
+
+//perfect scrollbar
+#p-scroll-bar,
+#ps-support,
+#ps-recent {
+	position: relative;
+	margin: 0px auto;
+	padding: 0px;
+	height: 400px;
+	overflow: auto;
+}
+
+#p-scroll-bar,
+#ps-support,
+#ps-recent {
+	margin-right: -20px;
+	padding-right: 20px;
+}
+
+#ps-sidebar {
+	margin: 0px auto;
+	padding: 0px;
+	height: 100vh;
+	overflow: auto;
+}
+
+#ps-cart {
+	position: relative;
+	margin: 0px auto;
+	padding: 0px;
+	height: 200px;
+	overflow: auto;
+}
+
+.ps{
+	overflow: hidden !important;
+	position: relative;
+}
+
+ul > li{
+	list-style: none !important;
+}
+
+.carousel-height {
+    height: 210px;
+}
+
+.blog-bg-wrap .blog-card.set-height:not(*:root) {
+	height: 550px !important;
+}
+
+.tabs{
+	z-index: 1
+}
+
+@media only screen and (max-width:1199px) {
+	.app-main-content {
+		padding: 64px 0 0 0 !important;
+	}
+	.app-toolbar {
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+	} 
+}
+
+@media only screen and (max-width:1199px) {
+	.app-customizer {
+		display: none;
+	}
+}
