@@ -1,0 +1,132 @@
+{{> widgets/breadcrumb/breadcrumb}}
+<div class="layout row wrap grid-wrap mb-0">
+	<div class="col s12 m6 l4 mb-2">
+		<div class="card w-100 " id="supportRequest2">
+			{{{preLoader}}}
+			<div class="card-content d-flex flex-direction-column justify-content-between h-100">
+				<div class="card-header justify-content-between d-flex">
+					<h3 class="card-title">{{translation.supportRequest}}</h3>
+					{{{ appCardAction "buttonthirteen" "sectionthirteen" 'supportRequest2'}}}
+				</div>
+				<div class="card-data support-widget-wrap">
+					{{> charts/doughnutChart}}
+					<ul class="list-unstyled row wrap">
+						<li class="d-flex justify-content-between align-items-center eq-33">
+							<p class="mb-0 content-title">{{translation.totalRequest}}</p>
+							<span class="new badge blue">4</span>
+							<a href="javascript:;" class="text-right">
+							<i aria-hidden="true" class="material-icons">visibility</i>
+						</a>
+						</li>
+						<li class="d-flex justify-content-between align-items-center eq-33">
+							<p class="mb-0 content-title">{{translation.new}}</p>
+							<span class="new badge red">4</span>
+							<a href="javascript:;" class="text-right">
+							<i aria-hidden="true" class="material-icons">visibility</i>
+						</a>
+						</li>
+						<li class="d-flex justify-content-between align-items-center eq-33">
+							<p class="mb-0 content-title">{{translation.pending}}</p>
+							<span class="new badge blue">4</span>
+							<a href="javascript:;" class="text-right">
+							<i aria-hidden="true" class="material-icons">visibility</i>
+						</a>
+						</li>
+					</ul>
+				</div>
+				<div class="app-footer">
+					<div class="d-flex justify-content-between align-items-center">
+						<span class="text-muted">
+						<i class="zmdi zmdi-replay mr-2 text-sm"></i>
+						<span class="text-sm">Updated 10 min ago</span>
+						</span>
+						<a href="javascript:;" class="btn">{{translation.assignNow}}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 m6 l4 mb-2">
+		{{> widgets/user-widgets/blogLayoutThree}}
+	</div>
+	<div class="col s12 m12 l4 mb-2">
+		{{> widgets/user-widgets/blogLayoutFour}}
+	</div>
+</div>
+<div class="layout row wrap">
+	<div class="col s12">
+		{{> widgets/user-widgets/newEmails}}
+	</div>
+</div>
+
+<script src="/plugins/chartjs/Chart.min.js"></script>
+<script type="text/javascript">
+	function taskDelete(event) {
+		$('#newEmails .section-preloader-wrapper').addClass('display');
+		setTimeout(function() {
+			$('#new-mail_' + event.id).remove();
+			console.log($("#newEmails ul").find("li").length);
+			if ($("#newEmails ul").find("li").length === 3) {
+				$('#newEmails ul').append("<li>No Data Available</li>");
+			}
+			$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
+			M.toast({
+				html: 'E-Mail Delete Successfully',
+				displayLength: '1500'
+			})
+		}, 1500);
+	}
+
+	function replyMail(event) {
+		$('#reply-message' + event.id).addClass('display');
+	}
+
+	function sendreply(event) {
+		$('#newEmails .section-preloader-wrapper').addClass('display');
+		$('#reply-message' + event.id).removeClass('display');
+		setTimeout(function() {
+			$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
+			M.toast({
+				html: 'Reply Sent Successfully',
+				displayLength: '1500'
+			})
+		}, 1500);
+	}
+	function reload(event) {
+		$('.todo-list-section .section-preloader-wrapper').addClass('display');
+		setTimeout(function() {
+			$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
+		}, 1500);
+	}
+	
+	// Full screeen functiionality
+   function showFullScreen(sec_wrap_id){
+      const el = (sec_wrap_id);
+      if (screenfull.enabled) {
+         screenfull.request(el);
+      }
+   };
+   // Section close on dashvboard page
+   function sectionClose(sec_wrap_id){
+      var sec = $(sec_wrap_id).addClass('hide');
+   };
+	function elementReload(event) {
+		$.ajax({
+				url: "/default/widgets/user-widgets",
+				type: "POST",
+				data: {
+					id: event.id
+				},
+				body: JSON.stringify({
+					"id": event.id
+				})
+			})
+			.done(function(datas) {
+				console.log("Sample of data:", datas);
+			});
+		$('#' + event.id + ' .section-preloader-wrapper').addClass('display');
+		setTimeout(function() {
+			$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
+		}, 1500);
+	}
+</script>

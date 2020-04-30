@@ -1,0 +1,96 @@
+<div class="card" id="toDoList">
+   {{{preLoader}}}
+   <div class="card-content" id="some-template">
+      <div class="card-header d-flex justify-content-between align-items-center">
+         <h3 class="card-title">{{translation.todoList}}</h3>
+         {{{ appCardAction "buttonfive" "sectionfive" "toDoList"}}}
+      </div>
+      <div>
+         <div class="to-do-wrapper">
+            <div id="p-scroll-bar">
+               <div class="w-100 list-hover">
+                  <div id='sec_1'>
+                  </div>   
+                  {{#each data.todo}}
+                  <div class="section list-item  to-do-list" id="section_{{id}}">
+                     <div class="list-item-content d-flex" id="todo_{{id}}">
+                        <div class="to-do-check">
+                           {{#if completed}}
+                              <label>
+                                 <input type="checkbox" name="task" id="{{id}}" autocomplete="off" checked="" onchange="return onToDochange(this)">
+                                 <span></span>
+                              </label>
+                           {{else}}
+                              <label>
+                                 <input type="checkbox" name="task" id="{{id}}" autocomplete="off" onchange=' return onToDochange(this)'>
+                                 <span></span>
+                              </label>
+                           {{/if}}
+                        </div>
+                        <div class="to-do-content">
+                           {{#if completed}}
+                           <div class="todo-title complete">
+                              <h5>{{title}}</h5>
+                           </div>
+                           {{else}}
+                           <div class="todo-title">
+                              <h5>{{title}}</h5>
+                           </div>
+                           {{/if}}
+                           <div class=""><span class="text-sm text-muted">{{date}}</span></div>
+                        </div>
+                     </div>
+                     <a class="remove-btn btn-floating modal-trigger error-bg" href="#modal{{id}}">
+                        <i aria-hidden="true" class="zmdi zmdi-delete material-icons"></i>
+                     </a>
+                     <div id="modal{{id}}" class="modal" style="max-width:500px">
+                        <div class="modal-content">
+                           <h4>Are You Sure You Want To Delete?</h4>
+                           <p class="text-xl">Are you sure you want to delete this list permanently?</p>
+                        </div>
+                        <div class="modal-footer">
+                           <a href="javascript:;" class="modal-close btn error-bg">Cancel</a>
+                           <a href="javascript:;" id="{{id}}" onclick='return taskDelete(this)' class="modal-close btn">Delete</a>
+                        </div>
+                     </div>
+                  </div>
+                  {{/each}} 
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="card-footer">
+         <div class="">
+            <a class="btn modal-trigger btn-sm" href="#modal">
+               <div class="btn-content">
+                  <i class="material-icons">add</i>{{translation.addNew}}
+               </div>
+            </a>
+            <div id="modal" class="modal" style="overflow:visible;">
+               <div class="modal-content">
+                  <div class="modal-title">
+                     <h4>Add To Do</h4>
+                  </div>
+                  <div>
+                     <input type="text" id='datepicker' autocomplete="off" class="datepicker" placeholder="Schedule Date">
+                     <input placeholder="Title" id="title" autocomplete="off" type="text" class="validate">
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <a href="javascript:;" class="modal-close  btn btn-sm error-bg">Cancel</a>
+                  <a href="javascript:;" class="modal-close btn btn-sm primary-bg" onclick='addtodoTask()'>Add New
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{{#extend 'scripts'}}
+   <script>
+      const container = document.querySelector('#p-scroll-bar');
+      new PerfectScrollbar(container, {
+         handlers: ['keyboard', 'wheel', 'touch']
+      });
+   </script>
+{{/extend}}

@@ -1,0 +1,24 @@
+<div class="text-center">
+	<canvas id="doughnutchart2" class="d-inline-block" style="height: 123px; width: 150px"></canvas>
+</div>
+{{#extend 'scripts'}}
+	<script type="text/javascript">
+			new Chart(document.getElementById("doughnutchart2"), {
+				type: 'doughnut',
+				data: {
+					labels: ["Websites", "iOS Devices", "Android Devices"],
+					datasets: [{
+						backgroundColor: ["#5d92f4", "#00D014", "#ffb70f"],
+						data: [300, 50, 20]
+					}]
+				},
+				options: {
+					legend: {
+						display: false
+					},
+					cutoutPercentage: 70,
+					padding: 20,
+				}
+			});
+	</script>
+{{/extend}}

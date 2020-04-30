@@ -1,0 +1,134 @@
+{{> widgets/breadcrumb/breadcrumb}}
+<div class="standard-table-wrapper">
+	<div class="card mb-4">
+		<div class="card-content">
+			<div class="card-header">
+				<h3 class="card-title">{{translation.responsiveTable}}</h3>
+			</div>
+			<div class="responsive-scrollx">
+				<table id="resp-table">
+					<thead>
+						<tr>
+							<th id="dishName" class="smpSortableTable--sortable people-table--sortable">Dessert(100g serving)</th>
+							<th id="dishCalories" class="smpSortableTable--sortable people-table--sortable">Calories</th>
+							<th id="dishfat" class="smpSortableTable--sortable people-table--sortable">Fat (g)</th>
+							<th id="dishCarbs" class="smpSortableTable--sortable people-table--sortable">Carbs (g)</th>
+							<th id="dishProtein" class="smpSortableTable--sortable people-table--sortable">Protein (g)</th>
+							<th id="dishSodium" class="smpSortableTable--sortable people-table--sortable">Sodium (mg)</th>
+							<th id="dishCalcium" class="smpSortableTable--sortable people-table--sortable">Calcium (%) </th>
+							<th id="dishIron" class="smpSortableTable--sortable people-table--sortable">Iron (%)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Kitkat</td>
+							<td>518</td>
+							<td>26</td>
+							<td>65</td>
+							<td>7</td>
+							<td>54</td>
+							<td>12%</td>
+							<td>6%</td>
+						</tr>
+						<tr>
+							<td>Donut</td>
+							<td>452</td>
+							<td>25</td>
+							<td>51</td>
+							<td>4.9</td>
+							<td>326</td>
+							<td>2%</td>
+							<td>22%</td>
+						</tr>
+						<tr>
+							<td>Honeycomb</td>
+							<td>408</td>
+							<td>3.2</td>
+							<td>87</td>
+							<td>6.5</td>
+							<td>562</td>
+							<td>0%</td>
+							<td>45%</td>
+						</tr>
+						<tr>
+							<td>Lollipop</td>
+							<td>362</td>
+							<td>0.2</td>
+							<td>98</td>
+							<td>0</td>
+							<td>38</td>
+							<td>0%</td>
+							<td>2%</td>
+						</tr>
+						<tr>
+							<td>Jelly bean</td>
+							<td>375</td>
+							<td>0</td>
+							<td>94</td>
+							<td>0</td>
+							<td>50</td>
+							<td>0%</td>
+							<td>0%</td>
+						</tr>
+						<tr>
+							<td>Gingerbread</td>
+							<td>356</td>
+							<td>16</td>
+							<td>49</td>
+							<td>3.9</td>
+							<td>327</td>
+							<td>7%</td>
+							<td>16%</td>
+						</tr>
+						<tr>
+							<td>Cupcake</td>
+							<td>305</td>
+							<td>3.7</td>
+							<td>67</td>
+							<td>4.3</td>
+							<td>413</td>
+							<td>3%</td>
+							<td>8%</td>
+						</tr>
+						<tr>
+							<td>Eclair</td>
+							<td>262</td>
+							<td>16</td>
+							<td>23</td>
+							<td>6</td>
+							<td>337</td>
+							<td>6%</td>
+							<td>7%</td>
+						</tr>
+						<tr>
+							<td>Ice cream sandwich</td>
+							<td>237</td>
+							<td>9</td>
+							<td>37</td>
+							<td>4.3</td>
+							<td>129</td>
+							<td>8%</td>
+							<td>1%</td>
+						</tr>
+						<tr>
+							<td>Frozen Yogurt</td>
+							<td>159</td>
+							<td>6</td>
+							<td>24</td>
+							<td>4</td>
+							<td>87</td>
+							<td>14%</td>
+							<td>1%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+{{#extend 'scripts'}}
+<script type="text/javascript">
+	$('#resp-table').smpSortableTable(false);
+
+</script>
+{{/extend}}

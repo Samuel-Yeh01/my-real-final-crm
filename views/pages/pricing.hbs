@@ -1,0 +1,170 @@
+<div class="pricing-wrapper">
+	{{> widgets/breadcrumb/breadcrumb}}
+	<div class="row text-center">
+		<h2 class="mb-3">{{translation.chooseThePlanThatWorksForYou}}</h2>
+		<div class="demo d-flex justify-content-center align-items-center mb-5">
+			<span class="mr-3">{{translation.monthly}}</span>
+			<span class="toggle mr-3"></span>
+			<span class="mr-2">{{translation.yearlyGet2MonthExtra}}</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12 m4">
+			<div class="p-m-5 card text-center">
+				<div class="card-content">
+					<div class="pricing-icon mb-30">
+						<img src="/images/pricing-icon.png" alt="pricing icon" class="img-responsive" width="" height=""></div>
+					<h2 class="primary-text pricing-title mb-4 mt-5 text-xxl">{{translation.basic}}</h2>
+					<p class="mb-3">Secure file sharing and collaboration.</p>
+					<div class="mb-3">
+						<h2 class="amount-title text-xxl mb-3">Free</h2>
+						<span class="text-muted small">For 1 user</span>
+					</div>
+					<ul class="price-detail list-unstyled">
+						<li class="mb-2">100 GB secure storage</li>
+						<li class="mb-2">2 GB file upload</li>
+						<li class="mb-2">Minimum 3 users, max 10 users</li>
+					</ul>
+					<button type="button" class="btn btn-block">
+                  <div class="btn-content">{{translation.startToBasic}}</div>
+               </button>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m4">
+			<div class="card text-center p-m-5">
+				<div class="card-content">
+					<div class="pricing-icon mb-30"><img src="/images/pricing-icon.png" alt="pricing icon" class="img-responsive" width="" height=""></div>
+					<h2 class="error-text pricing-title mb-4 mt-5 text-xxl">{{translation.pro}}</h2>
+					<p class="mb-3">More power &amp; personalization</p>
+					<div class="mb-3">
+						<h2 class="pro amount-title text-xxl mb-3">$35/month</h2>
+						<span class="text-muted small">For 1 user</span>
+					</div>
+					<ul class="price-detail list-unstyled">
+						<li class="mb-2">Unlimited storage</li>
+						<li class="mb-2">5 GB file upload</li>
+						<li class="mb-2">Minimum 3 users, no maximum</li>
+					</ul>
+					<button type="button" class="btn btn-block error-bg">
+                  <div class="btn-content">{{translation.upgradeToPro}}</div>
+               </button>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m4">
+			<div class="card text-center p-m-5">
+				<div class="card-content">
+					<div class="pricing-icon mb-30"><img src="/images/pricing-icon.png" alt="pricing icon" class="img-responsive" width="" height=""></div>
+					<h2 class="success-text pricing-title mb-4 mt-5 text-xxl">{{translation.advanced}}</h2>
+					<p class="mb-3">Advanced Feature For Brands</p>
+					<div class="mb-3">
+						<h2 class="advanced amount-title text-xxl mb-3">$70/month</h2>
+						<span class="text-muted small">For 1 more user</span>
+					</div>
+					<ul class="price-detail list-unstyled">
+						<li class="mb-2">Unlimited storage</li>
+						<li class="mb-2">15 GB file upload</li>
+						<li class="mb-2">Minimum 3 users, no maximum</li>
+					</ul>
+					<button type="button" class="btn btn-block success-bg">
+                  <div class="btn-content">{{ translation.upgradeToAdvance}}</div>
+               </button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row pb-5 pt-4 mb-0">
+		<h2 class="center-align"> {{ translation.comparePlans }} </h2>
+	</div>
+	<div class="fixed-pricing">
+		<div class="row m-0 grid-wrap">
+			<div class="col s12 m12 l4 p-0">
+				<div class="pricing-box card w-100">
+
+					<div class="pricing-head">
+						<h2 class="primary-text pricing-title mb-0 text-xxl">{{translation.basicFree}}</h2>
+					</div>
+					<div class="plan-info"><span>100 responses / mo</span></div>
+					<div class="pricing-body">
+						<ul class="list-unstyled plan-info-listing mb-5">
+							{{#each data.features.basic}}
+							<li><i class="ti-check-box"></i><a href="javascript:void(0);">{{this}}</a></li>
+							{{/each}}
+						</ul>
+						<button type="button" class="btn btn-block">
+                     <div class="btn-content">{{translation.startToBasic}}</div>
+                  </button>
+
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m12 l4 p-0">
+				<div class="pricing-box card w-100">
+					<div class="pricing-head">
+						<h2 class="error-text pricing-title text-xxl mb-0">{{translation.pro}}</h2>
+					</div>
+					<div class="plan-info"><span>100 responses / mo</span></div>
+					<div class="pricing-body">
+						<ul class="list-unstyled plan-info-listing mb-5">
+							{{#each data.features.pro}}
+							<li><i class="ti-check-box"></i><a href="javascript:void(0);">{{this}}</a></li>
+							{{/each}}
+						</ul>
+						<button type="button" class="btn btn-block error-bg">
+                     <div class="btn-content">{{translation.upgradeToPro}}</div>
+                  </button>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m12 l4 p-0">
+				<div class="pricing-box card w-100">
+					<div class="pricing-head">
+						<h2 class="success-text pricing-title mb-0 text-xxl">{{translation.advanced}}</h2>
+					</div>
+					<div class="plan-info"><span>100 responses / mo</span></div>
+					<div class="pricing-body">
+						<ul class="list-unstyled plan-info-listing mb-5">
+							{{#each data.features.advanced}}
+							<li><i class="ti-check-box"></i><a href="javascript:void(0);">{{this}}</a></li>
+							{{/each}}
+						</ul>
+						<button type="button" class="btn btn-block success-bg">
+                     <div class="btn-content">{{ translation.upgradeToAdvance}}</div>
+                  </button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row py-5 mb-0">
+		<h2 class="center-align">{{translation.frequentlyAskedQuestions}}</h2>
+	</div>
+	<div class="faq-wrapper">
+		<div class="grid-inline column-masonary">
+			{{#each data.faqs}}
+			<div class="card p-4 mb-3">
+				<div class="card-body">
+					<div class="card-title mb-3"> {{ title }} </div>
+					<div class="card-text"> {{content}} </div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+{{#extend 'scripts'}}
+<script type="text/javascript">
+	$('.toggle').minitoggle();
+	$('.toggle').on("toggle", function(e) {
+		if (e.isActive) {
+			$(".pro.amount-title").text("$30/year")
+			$(".advanced.amount-title").text("$59/year")
+		} else {
+			$(".pro.amount-title").text("$35/month")
+			$(".advanced.amount-title").text("$70/month")
+		}
+	});
+
+</script>
+{{/extend}}

@@ -1,0 +1,49 @@
+<div class="card" id="recentSales">
+	{{{preLoader}}}
+	<div class="card-content">
+		<div class="card-header d-flex justify-content-between align-items-center">
+			<h3 class="card-title">{{translation.recentSale}}</h3>
+			{{{ appCardAction "buttontwo" "sectiontwo" "recentSales"}}}
+		</div>
+		<div class="card-data">
+			<div>
+				<!---->
+				<div id="ps-recent">
+					<div class="card-list">
+						<div>
+							{{#each data.recentSales}}
+							<a class="list-item">
+								  <img src="{{ img }}" alt="images" class="mr-4 img-responsive" width="50" height="50">
+								  <div class="list-item-content">
+										<div class="list-item-sub-title">
+                                 <h5 class="mb-1">{{{ title }}}</h5>
+                                 <div class="list-title-content">
+                                    <span class="mr-3 text-sm base-color"><i class="fas fa-download mr-2"></i>{{ sale }}</span>
+                                    <span class=" text-sm base-color"><i class="far fa-eye mr-2"></i>{{ views }}</span>
+                                 </div>
+										</div>
+								  </div>
+								  <div class="list-item-action">
+										<h5 class="mb-0 fw-bold primary-text">{{ price }}</h5>
+								  </div>
+							 </a> 
+                      {{/each}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				<a href="#" class="waves-effect waves-light btn btn-sm">{{translation.viewAll}}</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{#extend 'scripts'}}
+<script>
+	new PerfectScrollbar('#ps-recent', {
+		handlers: ['keyboard', 'wheel', 'touch']
+	});
+
+</script>
+{{/extend}}

@@ -1,0 +1,34 @@
+<div class="card w-100" id="topSelling">
+	{{{preLoader}}}
+	<div class="card-content">
+		<div class="card-header">
+			<div class="card-header d-flex justify-content-between align-items-center">
+				<h3 class="card-title">{{translation.topSelling}}</h3>
+				{{{ appCardAction "buttonten" "sectionten" "topSelling"}}}
+			</div>
+			<div class="card-data mb-4">
+				<div class="top-selling-widget top-selling-slider">
+					{{#each data.topSelling}}
+					<div class="text-center">
+						<div class="thumbnail mb-2"><img src="{{thumbnail}}" class="img-responsive mx-auto" width="245" height="250"></div>
+						<h4 class="text-center fw-bold mb-3">{{name}}</h4>
+						<h5 class="primary-text text-center">{{price}}</h5>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+			<div class="card-footer border-top-1">
+				<div class="d-flex">
+					<div class="w-50 text-center ">
+						<p class="mb-0 text-sm">Total Sales</p>
+						<h4 class="fw-bold">12,550</h4>
+					</div>
+					<div class="w-50 text-center border-left-1">
+						<p class="mb-0 text-sm">Earning</p>
+						<h4 class="fw-bold">25,000</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,73 @@
+<canvas id="gradientLineChart" width="445" height="245"></canvas> 
+{{#extend 'scripts'}}
+	<script type="text/javascript">
+		function hexToRgbA(hex, alpha) {
+			var c;
+			if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+				c = hex.substring(1).split('');
+				if (c.length === 3) {
+					c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+				}
+				c = '0x' + c.join('');
+				return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + alpha + ')';
+			}
+			throw new Error('Bad Hex');
+		}
+		var bar_ctx = document.getElementById('gradientLineChart').getContext('2d');
+
+		var gradientFill = bar_ctx.createLinearGradient(500, 0, 100, 0)
+		var gradientFill2 = bar_ctx.createLinearGradient(500, 0, 100, 0)
+
+		gradientFill.addColorStop(0, '#FF3739')
+		gradientFill.addColorStop(1, '#FFB70F')
+
+		gradientFill2.addColorStop(0, hexToRgbA("#FF3739", 0.6))
+		gradientFill2.addColorStop(1, hexToRgbA("#FFB70F", 0.6))
+
+		new Chart(document.getElementById("gradientLineChart"), {
+			type: 'line',
+			data: {
+				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+				datasets: [{
+					label: 'Data',
+					borderColor: gradientFill,
+					pointBorderColor: gradientFill,
+					pointBackgroundColor: gradientFill,
+					pointHoverBackgroundColor: gradientFill,
+					pointHoverBorderColor: gradientFill,
+					pointBorderWidth: 10,
+					pointHoverRadius: 10,
+					pointHoverBorderWidth: 1,
+					pointRadius: 3,
+					fill: true,
+					backgroundColor: gradientFill2,
+					borderWidth: 4,
+					data: [100, 120, 150, 170, 180, 170, 160, 190]
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				legend: {
+					display: true
+				},
+				scales: {
+					xAxes: [{
+						display: true,
+						gridLines: {
+							display: true,
+							drawBorder: false
+						}
+					}],
+					yAxes: [{
+						display: true,
+						ticks: {
+							beginAtZero: false
+						}
+					}]
+				}
+			}
+		});
+
+	</script>
+{{/extend}}

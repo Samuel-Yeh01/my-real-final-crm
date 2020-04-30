@@ -1,0 +1,89 @@
+<div class="session-wrapper">
+	<div class="row h-100 mb-0">
+		<div class="col s3 testimonial-sec">
+
+			<div class="session-left">
+				<div class="session-slider">
+					{{#each data.testimonials}}
+					<div class="slider-content">
+						<img src="{{avatar}}" class="rounded-circle img-responsive" alt="avatar" width="170" height="170">
+						<div class="slider-meta mb-3">
+							<span class="d-block client-name fw-bold"><i>{{name}}</i></span>
+							<span class="d-block client-digg">{{designation}}</span>
+						</div>
+						<p class="px-4">{{body}}</p>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+		
+		<div class="col s9 login-sec flex-center">
+			<div class="session-right text-xs-center">
+				<div class="session-table-cell">
+					<div class="session-content">
+						<div class="session-head text-center">
+							<img src="/images/session-logo.png" class="img-responsive mb-3" alt="session-logo" height="100" width="100">
+							<h2 class="mb-3">Login To Admin</h2>
+							<div id="login_error" data-value="{{Data}}"></div>
+							<p class="text-md">Enter username and password to access control panel of Vuely.</p>
+						</div>
+						<form class="mt-4" method="post" action="/session/login">
+							<div class='input-field'>
+								<input class='validate' value="demo@example.com" type='email' name='email' id='email' />
+								<label for='email'>Enter your email</label>
+							</div>
+							<div class='input-field'>
+								<input class='validate' value="test#123" type='password' name='password' id='password' />
+								<label for='password'>Enter your password</label>
+							</div>
+							<p class="text-center">
+								<a href='/session/forgot-password'><b>Forgot Password?</b></a>
+							</p>
+							<div class="text-center">
+								<div>
+									<input type="submit" value="Login" class="d-block btn btn-block blue mb-2">
+									<a href="/session/signup" class=' btn btn-block waves-effect green mb-2'>Create Account</a>
+									<p>By Signing in i agree to the <a href="">terms and conditions</a></p>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="session-social-links d-block text-center">
+						<ul class="list-inline social-list">
+							<li>
+								<span class="blue session-icon">
+                           <a href="javascript:;" >
+                              <i class="ti-facebook"></i>
+                           </a>
+                        </span>
+							</li>
+							<li>
+								<span class="red session-icon">
+                           <a href="javascript:;"><i class="ti-google"></i></a>
+                        </span>
+							</li>
+							<li><span class="error session-icon"><i class="ti-twitter-alt"></i></span></li>
+							<li><span class="green session-icon"><i class="ti-github"></i></span></li>
+						</ul>
+					</div>
+					<span class="text-center d-block">
+                  <a href="/loginWithAuth0" class=' btn waves-effect red mb-2' onclick=" return loginWithfacebook(this)">
+                    Login With Auth0
+                  </a>
+               </span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{#extend 'scripts'}}
+<script type="text/javascript">
+	var error = $('#login_error').attr('data-value');
+	if (error) {
+		M.toast({
+			html: error
+		});
+	}
+
+</script> {{/extend}}

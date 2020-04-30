@@ -1,0 +1,69 @@
+<div class="row">
+	{{#each data.users}}
+	<div class="col s12 m6 l4 text-center">
+		<div class="card">
+			<div class="card-content">
+				<div class="user-image text-xs-center mb-3">
+					<img src="{{profileImage}}" alt="user images" class="img-shadow rounded-circle" width="95" height="95">
+				</div>
+				<div class="user-list-content">
+					<div class="text-xs-center">
+						<h3 class="fw-bold">{{name}}</h3>
+						<p class="mb-3">{{technology}}</p>
+						<div class="social-list clearfix mb-4">
+							<ul class="list-inline d-inline-block my-0 social-list">
+								{{#each socialLinks}}
+								<li>
+									<a href="" class="text-pink">
+                              <i class="{{icon}}"></i>
+                           </a>
+								</li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+					<div class="d-flex justify-content-between align-items-center border-bottom-1 border-top-1 pa-2 mb-3">
+						<div class="align-item-start text-right">
+							<span>{{../translation.connections}}</span>
+						</div>
+						<div class="align-item-end">
+							<ul class="list-inline text-left">
+								{{#each ../data.connections}}
+								<li class="pa-0">
+									<img alt="user images" class="rounded-circle" src="{{ img }}" width="24" height="24">
+								</li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+					{{#if status}}
+					<div class="text-left">
+						<a href="javascript:;" class="user-follow  waves-effect waves-light btn green">FOLLOW</a>
+					</div>
+					{{else}}
+					<div class="text-left">
+						<a href="javascript:;" class="user-follow waves-effect waves-light btn red">UNFOLLOW</a>
+					</div>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</div>
+
+{{#extend 'scripts'}}
+	<script type="text/javascript">
+		$('.user-follow').on('click',function() {
+			var text = ($(this).text() === 'FOLLOW') ? 'UNFOLLOW' : 'FOLLOW';
+			$(this).text(text);
+			if ($(this).hasClass('green')) {
+				$(this).removeClass('green');
+				$(this).addClass('red');
+			} else {
+				$(this).removeClass('red');
+				$(this).addClass('green');
+			}
+		});
+	</script>
+{{/extend}}

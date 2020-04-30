@@ -1,0 +1,404 @@
+<aside class="main-sidebar">
+	<div id="ps-sidebar">
+		<div class="site-logo">
+			<a href="/" class="router-link-active">
+         <img src="/images/site-logo.png" alt="site logo" width="100" height="30">
+      </a>
+		</div>
+		<div class="sidebar-nav">
+			<div class="sidebar-user px-4">
+				<div class="dashboard-sidebar-profile d-flex justify-content-between mb-3">
+					<div class="profile-image-wrapper align-self-center">
+						<div style="height: 40px; width: 40px;">
+							<img class="rounded-circle img-responsive" src="/images/avatars/user-13.jpg" alt="avatar" width="40" height="40">
+						</div>
+					</div>
+					<div class="profile-title-content ml-3 align-self-center">
+						<div>
+							<span>John Leider</span>
+						</div>
+					</div>
+					<div class="align-self-center mt-2 sidebar-user-drop">
+						<div class="">
+							<a class="dropdown-trigger1" href="javascript:;" data-target="dropdown64">
+                        <i aria-hidden="true" class="icon material-icons theme--dark">more_vert</i>
+                     </a>
+							<div class="dropdown-content laguage-sec-wrapper" id="dropdown64">
+								<div class="collection" tabindex="0">
+									<a href="javascript:;" class="collection-item primary-bg">
+                              <span class="fw-bold d-block"> John Leider </span>
+                              <span class="text-sm d-block"> info@example.com</span>
+                           </a>
+								</div>
+								<div class="drop-list" tabindex="0">
+									<div>
+										<a class="appendUrl" href="{{{ url '/users/profile' }}}">
+                                 <i class="ti-user mr-3 primary-text"></i>
+                                 <span>User Profile</span>
+                              </a>
+									</div>
+									<div>
+										<a class="appendUrl" href="{{{ url '/users/list' }}}">
+                                 <i class="ti-bell mr-3 success-text"></i>
+                                 <span>User Lists</span>
+                              </a>
+									</div>
+									<div>
+										<a href="javascript:;" onclick="logout();">
+                                 <i class="ti-power-off mr-3 error-text"></i>
+                                 <span>Logout</span>
+                              </a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ul class="sidebar-menu collapsible pb-5">
+				<li class="header">{{translation.general}}</li>
+				<li class="active menu-item dashboard">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                     <i class="mr-2 zmdi zmdi-view-dashboard"></i> <span>{{translation.dashboard}}</span>
+                  </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="">
+							<li class="menu-item">
+								<a class="appendUrl" href="/default/dashboard/ecommerce">{{translation.ecommerce}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="menu-item widgets">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                     <i class="mr-2 zmdi zmdi-widgets"></i> <span>{{translation.widgets}}</span>
+                  </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/widgets/user-widgets' }}}">{{translation.user}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/widgets/chart-widgets' }}}">{{translation.charts}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="menu-item ecommerce">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                     <i class="mr-2 zmdi zmdi-shopping-cart"></i>
+                     <span>{{translation.ecommerce}}</span>
+                 </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ecommerce/shop' }}}">{{translation.shop}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ecommerce/cart' }}}">{{translation.cart}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ecommerce/checkout' }}}">{{translation.checkout}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ecommerce/cards' }}}">{{translation.cards}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="menu-item pages">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                     <i class="mr-2 zmdi zmdi-file-plus"></i>
+                     <span>{{translation.pages}}</span>
+                  </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" class="appendUrl" href="{{{ url '/pages/blog' }}}">{{translation.blog}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/pages/gallery' }}}">{{translation.gallery}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/pages/pricing' }}}">{{translation.pricing}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/pages/blank' }}}">{{translation.blank}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="menu-item session">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                     <i class="mr-2 zmdi zmdi-time"></i>
+                     <span>{{translation.session}}</span>   
+                  </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="">
+								<a class="appendUrl" href="/session/signup">{{translation.signUp}}</a>
+							</li>
+							<li class="">
+								<a class="appendUrl" href="/session/login">{{translation.login}}</a>
+							</li>
+							<li class="">
+								<a class="appendUrl" href="/session/lockscreen">{{translation.lockScreen}}</a>
+							</li>
+							<li class="">
+								<a class="appendUrl" href="/session/forgot-password">{{translation.forgotPassword}}</a>
+							</li>
+							<li class="">
+								<a class="appendUrl" href="/session/reset-password">{{translation.resetPassword}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="header">{{translation.components}}</li>
+				<li class="menu-item treeview ui-elements">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                        <i class="mr-2 zmdi zmdi-wrench"></i>
+                        <span>{{translation.uiElements}}</span>
+                    </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/button' }}}">{{translation.buttons}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/cards' }}}">{{translation.cards}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/checkbox' }}}">{{translation.checkbox}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/carousel' }}}">{{translation.carousel}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/chips' }}}">{{translation.chips}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/datepicker' }}}">{{translation.datepicker}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/dropdown' }}}">{{translation.dropdown}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/grid' }}}">{{translation.grid}}</a>
+							</li>
+							<li class="menu-item">
+								<a href="{{{ url '/ui-elements/input' }}}">{{translation.input}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/modals' }}}">{{translation.modals}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/radio' }}}">{{translation.radio}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/range' }}}">{{translation.range}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/select' }}}">{{translation.select}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/tabs' }}}">{{translation.tabs}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/navbar' }}}">{{translation.navbar}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/tooltip' }}}">{{translation.tooltip}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/ui-elements/timepicker' }}}">{{translation.timepicker}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="menu-item treeview forms">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                        <i class="mr-2 zmdi zmdi-file-text"></i>
+                        <span>{{translation.forms}}</span>
+                    </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/forms/form-validation' }}}">{{translation.formValidation}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="menu-item treeview charts">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                     <i class="mr-2 zmdi zmdi-chart-donut"></i>
+                     <span>{{translation.charts}}</span>
+                  </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/charts/express-chartjs' }}}">{{translation.Chartjs}}
+                         </a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="menu-item treeview icons">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                     <i class="mr-2 zmdi zmdi-flag"></i>
+                     <span>{{translation.icons}}</span>
+                  </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/icons/themify' }}}">{{translation.themify}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/icons/material'}}}">{{translation.material}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="menu-item treeview tables">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                        <i class="mr-2 zmdi zmdi-grid"></i>
+                        <span>{{translation.tables}}</span>
+                    </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/tables/standard' }}}">{{translation.standard}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/tables/responsive-table' }}}">{{translation.responsiveTable}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href=" {{{url '/tables/search-row' }}}">{{translation.searchRow}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="menu-item treeview maps">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                        <i class="mr-2 zmdi zmdi-map"></i>
+                        <span>{{translation.maps}}</span>
+                    </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/maps/google-maps' }}}">{{translation.googleMaps}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="header">{{translation.applications}}</li>
+				<li class="menu-item treeview users">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                        <i class="mr-2 zmdi zmdi-accounts"></i>
+                        <span>{{translation.users}}</span>
+                    </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/users/profile' }}}">{{translation.userProfile}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/users/list' }}}">{{translation.usersList}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="menu-item treeview calendar">
+					<div class="collapsible-header">
+						<a class="appendUrl" href="{{{ url '/calendar'}}}">
+                     <i class="mr-2 zmdi zmdi-calendar-note"></i> <span>{{translation.calendar}}</span>
+                  </a>
+					</div>
+				</li>
+				<li class="header">{{translation.features}}</li>
+				<li class="menu-item treeview editor">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+                     <i class="mr-2 zmdi zmdi-edit"></i>
+                     <span>{{translation.editor}}</span>
+                  </a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{url '/editor/quilleditor'}}}">{{translation.quillEditor}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{url '/editor/ckeditor'}}}">{{translation.ckEditor}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</aside>
+{{#extend 'scripts'}}
+<script type="text/javascript">
+	clang = localStorage.getItem("clang")
+
+	$('.appendUrl').each(function() {
+		var href = $(this).attr('href');
+		$(this).attr("href", href + clang);
+	});
+
+	new PerfectScrollbar('#ps-sidebar', {
+		handlers: ['keyboard', 'wheel', 'touch']
+	});
+	$('.dropdown-trigger1').dropdown({
+		alignment: 'right'
+	});
+
+	function logout() {
+		$.ajax({
+				url: "/session/logout",
+				type: "POST",
+			})
+			.done(function(data) {
+				window.location.href = '/session/login';
+			});
+	}
+
+	url = window.location.href;
+	pageName = url.split('/');
+	pageUrl = pageName[4];
+	if(pageName[4] == 'calendar?clang=en'){
+		pageUrl = 'calendar';
+	}
+	$('li.active').removeClass('active');
+	$('.' + pageUrl).addClass('active');
+	$('li .collapsible-body').removeAttr("style");
+	$('.' + pageUrl + ' .collapsible-body').addClass('d-block');
+	$('li .collapsible-header').on('click', function() {
+		$('li .collapsible-body').removeClass('d-block');
+	});
+</script>
+{{/extend}}

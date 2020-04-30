@@ -1,0 +1,111 @@
+<div class="card w-100" id="visitsalesstatistics">
+	{{{preLoader}}}
+	<div class="card-content">
+		<div class="card-header justify-content-between d-flex">
+			<h3 class="card-title">{{translation.salesAndVisitStats}}</h3>
+			{{{ appCardAction "buttonfour" "sectionfour" 'visitsalesstatistics'}}}
+		</div>
+
+		<div class="card-data">
+			<div>
+				<div class="">
+					<canvas id="visitSales" width="450" height="300" class="chartjs-render-monitor"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{#extend 'scripts' }}
+<script type="text/javascript">
+	//---------------------------------
+	//------ Line Chart
+	//---------------------------------
+	function hexToRgbA(hex, alpha) {
+		var c;
+		if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+			c = hex.substring(1).split('');
+			if (c.length === 3) {
+				c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+			}
+			c = '0x' + c.join('');
+			return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + alpha + ')';
+		}
+		throw new Error('Bad Hex');
+	}
+
+	var bar_ctx = document.getElementById('visitSales').getContext('2d');
+
+	var gradientFill = bar_ctx.createLinearGradient(0, 0, 800, 0);
+	gradientFill.addColorStop(0, '#1E3C72');
+	gradientFill.addColorStop(1, '#3B7CFF');
+
+	var gradientFill2 = bar_ctx.createLinearGradient(0, 0, 1000, 0);
+	gradientFill2.addColorStop(0, '#F7981C');
+	gradientFill2.addColorStop(1, '#F56074');
+
+	new Chart(document.getElementById("visitSales"), {
+		type: 'line',
+		data: {
+			labels: ['January 2014', 'January 2015', 'January 2016', 'January 2017'],
+			datasets: [{
+					label: 'Sales',
+					data: [0, 1000, 1250, 1000],
+					borderColor: gradientFill,
+					borderWidth: 5,
+					shadowColor: "#000000",
+					fill: false
+				},
+				{
+					label: 'Visits',
+					data: [750, 900, 450, 500],
+					borderColor: gradientFill2,
+					borderWidth: 5,
+					fill: false
+				},
+			]
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			title: {
+				display: true
+			},
+			elements: {
+				line: {
+					tension: 0.5
+				},
+				point: {
+					radius: 0
+				}
+			},
+			scales: {
+				yAxes: [{
+					gridLines: {
+						display: true,
+						drawBorder: false
+					},
+					ticks: {
+						stepSize: 500
+					},
+					display: true,
+				}],
+				xAxes: [{
+					gridLines: {
+						display: false,
+						drawBorder: false
+					},
+					display: true
+				}]
+			},
+			legend: {
+				display: true
+			},
+			tooltip: {
+				enabled: true
+			},
+			responsive: true,
+		}
+	});
+
+</script>
+{{/extend}}

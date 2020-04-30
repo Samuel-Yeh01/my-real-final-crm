@@ -1,0 +1,85 @@
+<div class="app-customizer">
+	<a href="javascript:;" data-target="slide-out2" class="sidenav2 sidenav-trigger customizer-toggle primary">
+      <i data-v-31edf67b="" class="zmdi zmdi-settings zmdi-hc-spin font-lg"></i>
+   </a>
+</div>
+<div id="slide-out2" class="sidenav">
+	<div class="collection m-0">
+		<div class="collection-item primary-bg d-flex justify-content-between align-items-center py-3">
+			<h2 class="white-text mb-0 fw-normal">Theme options</h2>
+		</div>
+	</div>
+	<div>
+		<div>
+			<ul class="tabs">
+				<li class="tab col s6"><a class="active" href="#gereral">GENERAL</a></li>
+				<li class="tab col s6"><a href="#advance">ADVANCE</a></li>
+			</ul>
+		</div>
+		<div id="gereral">
+			<div class="p-4 text-center">
+				<div class="card mb-4">
+					<div class="card-content">
+						<div class="card-header">
+							<h5 class="mb-3">Sidebar Filters</h5>
+						</div>
+						<div class="sidebar-color">
+							{{#each data.sidebarFilters}}
+								<a class="{{class}}" id="{{class}}" onclick="return sidebarClass(this)" href="javascript:;"></a> 
+							{{/each}}
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-content">
+						<div class="card-header">
+							<h5 class="mb-3">Header Filters</h5>
+						</div>
+						<div class="header-color">
+							{{#each data.headerFilters}}
+								<a class="{{class}}" id="{{class}}" onclick="return headerClass(this)" href="javascript:;"></a> 
+							{{/each}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="advance">
+			<div class="p-4">
+				<div class="card">
+					<div class="card-content">
+						<div class="header-color">
+							<div class="mb-3">
+								<label>
+                           <input id="sidebar-collapsable" onclick="collapseSidebar()" type="checkbox" class="filled-in" autocomplete="off"/>
+                           <span>Collapse Sidebar</span>
+                        </label>
+							</div>
+							<div class="mb-3">
+								<label>
+                           <input id="rtllayout" type="checkbox" onclick="rtllayout()" class="filled-in" autocomplete="off"/>
+                           <span>Rtl Layout</span>
+                        </label>
+							</div>
+							<div class="mb-3">
+								<label>
+                           <input id="sidebarImages" type="checkbox" onclick="sidebarImages()" class="filled-in" autocomplete="off"/>
+                           <span>Background Image</span>
+                        </label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sidebar-images p-3" style="display:none">
+					{{#each data.sidebarBackgroundImages}}
+						<div class="d-inline-block set-width mx-1 mb-2">
+							<a href="javascript:void(0)" id="{{id}}" onclick=" return changebg(this)" class="img-holder text-center">
+								<img src="{{imageurl}}" alt="dynamic sidebar images" class="img-responsive" width="110" height="200">
+							</a>
+						</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

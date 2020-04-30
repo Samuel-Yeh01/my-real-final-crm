@@ -1,0 +1,63 @@
+{{> widgets/breadcrumb/breadcrumb}}
+<div class="themify-icons-wrapper">
+	<div class="card mb-4">
+		<div class="card-content">
+			<div class="card-header d-flex justify-content-between align-items-center">
+				<h3 class="card-title">{{translation.arrowsAndDirectionsIcons}}</h3>
+			</div>
+			<div class="row icon-style">
+				{{#each data.themifyIcons.arrowsDirectionIcons }}
+				<div class="col s12 m4 l3">
+					<span><i class="{{this}}"></i></span>
+					<span class="icon-title">{{this}}</span>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	<div class="card mb-4">
+		<div class="card-content">
+			<div class="card-header d-flex justify-content-between align-items-center">
+				<h3 class="card-title">{{translation.webAppIcons}}</h3>
+			</div>
+			<div class="row icon-style">
+				{{#each data.themifyIcons.webAppIcons }}
+				<div class="col s12 m4 l3">
+					<span><i class="{{this}}"></i></span>
+					<span class="icon-title">{{this}}</span>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	<div class="card mb-4">
+		<div class="card-content">
+			<div class="card-header d-flex justify-content-between align-items-center">
+				<h3 class="card-title">{{translation.CONTROLICONS}}</h3>
+			</div>
+			<div class="row icon-style">
+				{{#each data.themifyIcons.controlIcons }}
+				<div class="col s12 m4 l3">
+					<span><i class="{{this}}"></i></span>
+					<span class="icon-title">{{this}}</span>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	<div class="card mb-4">
+		<div class="card-content">
+			<div class="card-header d-flex justify-content-between align-items-center">
+				<h3 class="card-title">{{ translation.TEXTEDITOR }}</h3>
+			</div>
+			<div class="row icon-style">
+				{{#each data.themifyIcons.textEditorIcons }}
+				<div class="col s12 m4 l3">
+					<span><i class="{{this}}"></i></span>
+					<span class="icon-title">{{this}}</span>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</div>

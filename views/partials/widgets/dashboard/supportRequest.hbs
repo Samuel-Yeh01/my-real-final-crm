@@ -1,0 +1,51 @@
+<div class="card" id="supportRequest">
+   {{{preLoader}}}
+   <div class="card-content">
+      <div class="card-header d-flex justify-content-between align-items-center">
+         <h3 class="card-title">{{translation.supportRequest}}</h3>
+         {{{ appCardAction "buttonfour" "sectionfour" "supportRequest"}}}
+      </div>
+      <div class="card-data"> 
+         <div id="ps-support">
+            <div class="card-list">
+               <div>
+                  {{#each data.supportRequests}}
+                     <div class="list-item">
+                        <div class="list-item-content">
+                           <div class="">
+                              <h5 class="">{{title}}</h5>
+                              <span class="text-muted text-sm">{{date}}</span>
+                           </div>
+                           <p class="text-sm">{{content}}</p>
+                        </div>
+                        <div class="">
+                           {{#if status}}
+                              <span class="badge red text-white">
+                                 Pending
+                              </span>
+                           {{else}}   
+                              <span class="badge blue text-white">
+                                 Closed
+                              </span>
+                           {{/if}}   
+                        </div>
+                     </div>
+                  {{/each}}   
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="card-footer">
+      <a class="waves-effect waves-light btn btn-sm">{{translation.viewAll}}</a>
+   </div>
+   </div>
+   
+</div>
+
+{{#extend 'scripts'}}
+   <script>
+      new PerfectScrollbar('#ps-support', {
+         handlers: ['keyboard', 'wheel', 'touch']
+      });
+   </script>
+{{/extend}}

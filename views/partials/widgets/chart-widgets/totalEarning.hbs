@@ -1,0 +1,92 @@
+<div class="card" id="totalEarning">
+	{{{ preLoader }}}
+	<div class="card-content">
+		<div class="card-header justify-content-between d-flex">
+			<h3 class="card-title">{{translation.totalEarnings}}</h3>
+			{{{ appCardAction "buttonfive" "sectionsix" 'totalEarning'}}}
+		</div>
+		<div class="card-data">
+			<canvas id="Totalearning" width="450" height="300" class="chartjs-render-monitor"></canvas>
+		</div>
+	</div>
+</div>
+{{#extend 'scripts'}}
+<script type="text/javascript">
+	var bar_ctx = document.getElementById('Totalearning').getContext('2d');
+
+	var gradientFill = bar_ctx.createLinearGradient(1000, 0, 100, 0);
+	gradientFill.addColorStop(0, '#1E3C72');
+	gradientFill.addColorStop(1, '#3B7CFF');
+
+	var gradientFill2 = bar_ctx.createLinearGradient(1000, 0, 100, 0);
+	gradientFill2.addColorStop(0, '#F7981C');
+	gradientFill2.addColorStop(1, '#F56074');
+
+	new Chart(document.getElementById("Totalearning"), {
+		type: 'line',
+		data: {
+			labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+			datasets: [{
+					label: 'Open Rate',
+					data: [2200, 2100, 1950, 1600, 800, 350, 250, 650, 1200, 1900, 2900, 3100],
+					borderColor: gradientFill2,
+					borderWidth: 3,
+					shadowColor: "#000000",
+					pointBackgroundColor: '#FFF',
+					fill: false
+				},
+				{
+					label: 'Recurring Payments',
+					data: [500, 1100, 1600, 2000, 2500, 2600, 2300, 1900, 1500, 1100, 750, 850],
+					borderColor: gradientFill,
+					borderWidth: 3,
+					pointBackgroundColor: '#FFF',
+					fill: false
+				},
+			]
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			title: {
+				display: true
+			},
+			elements: {
+				line: {
+					tension: 0.5
+				},
+				point: {
+					radius: 7
+				}
+			},
+			scales: {
+				yAxes: [{
+					gridLines: {
+						display: true,
+						drawBorder: false
+					},
+					ticks: {
+						stepSize: 500
+					},
+					display: true,
+				}],
+				xAxes: [{
+					gridLines: {
+						display: false,
+						drawBorder: false
+					},
+					display: true
+				}]
+			},
+			legend: {
+				display: true
+			},
+			tooltip: {
+				enabled: true
+			},
+			responsive: true,
+		}
+	});
+
+</script>
+{{/extend}}

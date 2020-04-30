@@ -1,0 +1,38 @@
+<div class="card w-100" id="invoices">
+	{{{preLoader}}}
+	<div class="card-content">
+		<div class="card-header d-flex justify-content-between align-items-center">
+			<h3 class="card-title">{{translation.invoices}}</h3>
+			{{{ appCardAction "buttonseven" "sectionseven" "invoices"}}}
+		</div>
+		<div class="card-data">
+			<div class="responsive-scrollx">
+				<table class="striped table-responsive">
+					<thead>
+						<tr>
+							<th class="text-xs-left fw-bold">#</th>
+							<th class="text-xs-left fw-bold">Buyer</th>
+							<th class="text-xs-left fw-bold">Date</th>
+							<th class="text-xs-left fw-bold">Status</th>
+							<th class="text-xs-left fw-bold">Amount</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each data.invoice}}
+						<tr>
+							<td> {{id}} </td>
+							<td> {{name}} </td>
+							<td> {{date}} </td>
+							<td> <span class="badge {{labelClasses}} text-white"> {{status}} </span> </td>
+							<td> {{amount}} </td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+			<div class="card-footer">
+				<a href="javascript:;" class="waves-effect waves-light btn btn-sm">VIEW ALL</a>
+			</div>
+		</div>
+	</div>
+</div>

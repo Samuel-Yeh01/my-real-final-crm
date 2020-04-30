@@ -1,0 +1,71 @@
+<canvas id="lineChart" style="width: 485px; height: 206px;"></canvas>
+{{#extend 'scripts'}}
+<script type="text/javascript">
+	function hexToRgbA(hex, alpha) {
+		var c;
+		if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+			c = hex.substring(1).split('');
+			if (c.length === 3) {
+				c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+			}
+			c = '0x' + c.join('');
+			return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + alpha + ')';
+		}
+		throw new Error('Bad Hex');
+	}
+
+	var bar_ctx = document.getElementById('lineChart').getContext('2d');
+
+	var gradientFill = bar_ctx.createLinearGradient(0, 280, 0, 0);
+	gradientFill.addColorStop(0, hexToRgbA('#FFF', 0.1));
+	gradientFill.addColorStop(1, hexToRgbA('#00d0bd', 0.4));
+
+	new Chart(document.getElementById("lineChart"), {
+		type: 'line',
+		data: {
+			labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+			datasets: [{
+				data: [90, 140, 50, 120, 160, 90, 90],
+				borderColor: "#00d0bd",
+				backgroundColor: gradientFill,
+				fill: true
+			}, ]
+		},
+		options: {
+			title: {
+				display: true
+			},
+			elements: {
+				line: {
+					tension: 0
+				},
+				point: {
+					radius: 0
+				}
+			},
+			scales: {
+				yAxes: [{
+					gridLines: {
+						display: false,
+						drawBorder: false
+					},
+					display: false
+				}],
+				xAxes: [{
+					gridLines: {
+						display: false,
+						drawBorder: false
+					},
+					display: false
+				}]
+			},
+			lineTension: 0.3,
+			radius: 0,
+			legend: {
+				display: false
+			}
+		}
+	});
+
+</script>
+{{/extend}}

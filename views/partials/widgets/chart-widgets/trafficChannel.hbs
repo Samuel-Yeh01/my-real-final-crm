@@ -1,0 +1,66 @@
+<div class="card" id="trafficChannel">
+	{{{preLoader}}}
+	<div class="card-content">
+		<div class="card-header justify-content-between d-flex">
+			<h3 class="card-title">{{translation.trafficChannel}}</h3>
+			{{{ appCardAction "buttontwo" "sectiontwo" 'trafficChannel'}}}
+		</div>
+		<div class="card-data pt-3 border-bottom-1">
+			<div>
+				<div class="">
+					<canvas id="horizontalbar-chart" width="275" height="137" style="display: block; width: 275px; height: 137px;" class="chartjs-render-monitor"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="card-footer setcard-btn-width">
+         <div class=" d-flex justify-content-between ">
+			<div class="d-flex align-items-center text-md">
+				<i aria-hidden="true" class="mr-1 font-md material-icons theme--light">autorenew</i>
+				<p>{{translation.updated10MinAgo}}</p>
+			</div>
+			<button type="button" class="btn btn-sm primary-bg">
+				{{translation.goToCampaign}}
+			</button>
+         </div>
+		</div>
+	</div>
+</div>
+{{#extend 'scripts'}}
+<script type="text/javascript">
+	new Chart(document.getElementById("horizontalbar-chart"), {
+		type: 'horizontalBar',
+		data: {
+			labels: ['Direct User', 'Referral', 'Facebook', 'Google', 'Instagram'],
+			datasets: [{
+				backgroundColor: "#00d014",
+				data: [8.5, 6.75, 5.5, 7, 4.75]
+			}]
+		},
+		options: {
+			legend: {
+				display: false
+			},
+			scales: {
+				xAxes: [{
+					gridLines: {
+
+						drawBorder: false
+					},
+					ticks: {
+						min: 0,
+						max: 9
+					},
+				}],
+				yAxes: [{
+					gridLines: {
+						display: false
+					},
+					barPercentage: 1.0,
+					categoryPercentage: 0.5,
+				}]
+			}
+		}
+	});
+
+</script>
+{{/extend}}

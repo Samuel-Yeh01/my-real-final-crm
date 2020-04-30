@@ -1,0 +1,127 @@
+{{> widgets/breadcrumb/breadcrumb}}
+<div class="cart-wrapper relative product-table">
+	{{{preLoader}}}
+	<div class=" responsive-scrollx mb-5">
+		<table class="datatable table theme--light style-table striped table-spacing white-bg">
+			<thead>
+				<tr>
+					<th class="w-10" role="columnheader"></th>
+					<th class="w-50" role="columnheader">Product</th>
+					<th class="px-1 w-10" role="columnheader">Quantity</th>
+					<th class="px-4 w-10" role="columnheader">Price</th>
+					<th class="px-4 w-10" role="columnheader">Total</th>
+					<th class="px-4 w-10 text-center" role="columnheader">Remove</th>
+				</tr>
+				<tr class="datatable__progress">
+					<th colspan="6" class="column py-0"></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each data.cartProducts}}
+				<tr class="cart-row" id="product_{{id}}">
+					<form>
+						<td class="d-custom-flex align-items-center justify-center product-item px-1">
+							<img src="{{productImg}}" class="img-responsive" width="100" height="100">
+						</td>
+						<td>
+							<h6 class="mb-0">{{name}}</h6>
+						</td>
+						<td class="text-center count-wrap px-1">
+							<input name="quantity" class="cart-variant--quantity_input qty-field" data-unit-price="{{price}}" min="1" autocomplete="off" value="{{quantity}}" type="number" onchange="multiply.call(this,this.form.elements.quantity.value,this.form.elements.price.value)">
+						</td>
+						<td class="text-center price-wrap px-4">
+							<div class="d-flex align-items-center w-100 justify-content-center">
+								<span>$</span>
+								<input type="text" class="price-field" name="price" readonly value="{{price}}">
+							</div>
+						</td>
+						<td class="text-center total-wrap px-4">
+							<div class="d-flex align-items-center w-100 justify-content-center">
+								<span>$</span>
+								<input type="text" class="price-field" name="total" autocomplete="off" readonly value="{{total}}">
+							</div>
+						</td>
+						<td class="text-center px-4">
+							<a href="javascript:;" id="{{id}}" onclick="return deleteProduct({{id}},{{total}})">
+									<i aria-hidden="true" class="icon material-icons theme--light grey--text text--lighten-1">close</i>
+								</a>
+						</td>
+					</form>
+				</tr>
+				{{/each}}
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2" class="pl-4">
+						<div class="">
+							<div class="input__control">
+								<div class="input__slot">
+									<div class="text-field__slot">
+										<input class="mb-0 set-box-shadow input-height py-2 px-3" placeholder="Apply Promo Code" type="text">
+									</div>
+								</div>
+								<div class="text-field__details">
+									<div class="messages theme--light">
+										<div class="messages__wrapper"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+					<td class="text-center px-2">
+						<button type="button" class="btn theme--light warning">
+							<div class="btn__content">Apply</div>
+						</button>
+					</td>
+					<td class="text-left px-4">
+						<span class="fw-semi-bold">Total</span>
+					</td>
+					<td class="text-left px-4">
+						<span id="grandTotal" value="">$182 </span>
+					</td>
+					<td class="px-4">
+						<a class="appendUrl waves-effect waves-light btn" href="/default/ecommerce/checkout" class="waves-effect waves-light btn">						
+						Checkout
+					</a>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</div>
+{{#extend 'scripts'}}
+<script type="text/javascript">
+	function deleteProduct(id, total) {
+		$('.cart-wrapper .section-preloader-wrapper').addClass('display');
+		setTimeout(function() {
+			$('#product_' + id).remove();
+			var grandTotal = $('#grandTotal').text();
+			var gtotal = grandTotal.split('$')
+			var updatetotal = gtotal[1] - total
+			$('#grandTotal').text('$' + updatetotal);
+			if ($('table tbody').find('tr').length === 0) {
+				$('table tbody').append('<tr><td colspan="6"></td></tr>');
+				$('table tbody tr td').text('No Item Found');
+			}
+			$(".cart-wrapper .section-preloader-wrapper").fadeOut("slow").removeClass('display');
+		}, 1500);
+	}
+	$('.cart-variant--quantity_input').on("change", function() {
+		var st = 0;
+		$('.cart-row').each(function() {
+			var i = $('.cart-variant--quantity_input', this);
+			var up = $(i).data('unit-price');
+			var q = $(i).val();
+			st = st + (up * q);
+		});
+		$('#grandTotal').text('$' + st);
+	});
+
+	function multiply(one, two) {
+		if (one && two) {
+			this.form.elements.total.value = one * two;
+		}
+	}
+
+</script>
+{{/extend}}

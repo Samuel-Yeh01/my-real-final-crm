@@ -1,0 +1,15 @@
+{{> widgets/breadcrumb/breadcrumb}}
+<div class="layout row wrap">
+	{{#each data.gallery}}
+	<div class="col s12 m6 l3 mb-4">
+		<figure class="img-wrapper m-0">
+			<img src="{{imageUrl}}" width="600" height="600" alt="gallery image" class="img-responsive">
+			<figcaption>
+				<h4>{{caption}}</h4>
+				<h2>{{title}}</h2>
+			</figcaption>
+			<a href="javascript:void(0)"></a>
+		</figure>
+	</div>
+	{{/each}}
+</div>

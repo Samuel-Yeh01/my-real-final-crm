@@ -1,0 +1,55 @@
+<div id="slide-out" style="height: 100vh;" class="sidenav recent-chat-sidebar">
+	<div class="wrap chat-head">
+		<div class="p-4 d-flex align-items-center justify-content-between">
+			<h3>Chat </h3>
+			<h3><i class="material-icons">search</i></h3>
+		</div>
+	</div>
+	<div class="row mx-0">
+		<div class="col s12 px-0">
+			<ul class="tabs row">
+				<li class="tab col s6"><a class="active px-0" href="#test1">Recent Chat</a></li>
+				<li class="tab col s6"><a class="px-0" href="#test2">Previous Chat</a></li>
+			</ul>
+		</div>
+		<div id="test1" class="col s12 px-0">
+			<ul>
+				{{#each data.recentChat}}
+				<li>
+					<a class="d-flex align-items-center justify-content-between usr-chat">
+						<div class="name-wrap d-flex">
+							<div class="img-wrap mr-3">
+								<img src="{{avatar}}" alt="chat-users" style="width: 40px;height: 40px;border-radius: 21px;">
+							</div>
+							<div class="usrname-wrap">
+								<div class="wrap text-left">{{userName}}</div>
+							</div>
+						</div>
+						{{#if active}}
+						<div class="d-flex chat-bbl">
+							<i aria-hidden="true" class="material-icons">chat_bubble</i>
+						</div>
+						{{/if}}
+					</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+		<div id="test2" class="col s12 px-0">
+			<ul>
+				{{#each data.recentChat}}
+				<li>
+					<a class="d-flex align-items-center usr-chat">
+						<div class=" mr-3">
+							<img src="{{avatar}}" alt="chat-users" style="width: 40px;height: 40px;border-radius: 21px;">
+						</div>
+						<div class="usrname-wrap-p">
+							<div class="wrap">{{userName}}</div>
+						</div>
+					</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</div>

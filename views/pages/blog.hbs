@@ -1,0 +1,15 @@
+ {{> widgets/breadcrumb/breadcrumb}}
+<div class="row mb-0">
+	<div class="col s12 m8">
+		<div class="row">
+			{{#each data.bloggrids}}
+			<div class="col s12 m6">
+				{{> widgets/dashboard/blogLayout1}}
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	<div class="col s12 m4">
+		{{> widgets/blog-sidebar/blogSidebar}}
+	</div>
+</div>

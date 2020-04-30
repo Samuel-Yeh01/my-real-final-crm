@@ -1,0 +1,49 @@
+<div class="card w-100" id="recentOrders">
+	{{{preLoader}}}
+	<div class="card-content">
+		<div class="card-header d-flex justify-content-between align-items-center mb-4 pb-2">
+			<h3 class="card-title">{{translation.recentOrders}}</h3>
+			{{{ appCardAction "buttoneight" "sectioneight" "recentOrders"}}}
+		</div>
+		<div class="card-data responsive-scrollx mb-4">
+			<table class="striped table-responsive">
+				<thead>
+					<tr>
+						<th class="text-xs-left fw-bold">Order Id</th>
+						<th class="text-xs-left fw-bold">Product Name</th>
+						<th class="text-xs-left fw-bold">Quantity</th>
+						<th class="text-xs-left fw-bold">Status</th>
+						<th class="text-xs-left fw-bold">Amount</th>
+						<th class="text-xs-left fw-bold"></th>
+					</tr>
+				</thead>
+				<tbody class="text-md">
+					{{#each data.recentOrders}}
+					<tr id="row_{{id}}">
+						<td> {{id}} </td>
+						<td> {{productName}} </td>
+						<td> {{quantity}} </td>
+						<td>
+							<span class="badge {{labelClasses}} text-white">
+                      {{status}}
+                    </span>
+						</td>
+						<td> ${{amount}} </td>
+						<td>
+							<span>
+                        <a href="javascript:;" id="{{id}}" onclick='return orderDelete(this)'>
+                           <i aria-hidden="true" class="fa-lg icon zmdi zmdi-delete material-icons error-text"></i>
+                        </a>
+                     </span>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+		<div class="card-footer d-flex justify-content-between align-items-center">
+			<a class="waves-effect waves-light btn btn-sm">{{translation.viewAll}}</a>
+			<span class="align-items-center"><i class="zmdi zmdi-replay mr-2"></i><span class="text-sm">Updated 10 min ago</span></span>
+		</div>
+	</div>
+</div>

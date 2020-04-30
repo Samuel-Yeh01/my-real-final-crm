@@ -1,0 +1,75 @@
+<div class="card" id="productSales">
+	{{{preLoader}}}
+	<div class="card-content">
+		<div class="card-header justify-content-between d-flex">
+			<h3 class="card-title">{{translation.productSales}}</h3>
+			{{{ appCardAction "buttonseven" "sectionseven" 'productSales'}}}
+		</div>
+		<div class="card-data pt-3">
+			<div>
+				<canvas id="productsales" width="445" height="200" style="display: block; width: 445px; height: 200px;" class="chartjs-render-monitor"></canvas>
+			</div>
+		</div>
+	</div>
+</div>
+{{#extend 'scripts'}}
+<script type="text/javascript">
+	var bar_ctx = document.getElementById('productsales').getContext('2d');
+
+	var gradientFill = bar_ctx.createLinearGradient(0, 0, 0, 400);
+	gradientFill.addColorStop(0, 'rgba(59, 124, 255, 0.8)');
+	gradientFill.addColorStop(1, '#1E3C72');
+
+	var gradientFill2 = bar_ctx.createLinearGradient(0, 0, 0, 700);
+	gradientFill2.addColorStop(0, 'rgba(247, 152, 28, 0.8)');
+	gradientFill2.addColorStop(1, '#Fc6373');
+
+	new Chart(document.getElementById("productsales"), {
+		type: 'line',
+		data: {
+			labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+			datasets: [{
+				label: 'iPhone 8',
+				lineTension: 0,
+				pointRadius: 0,
+				data: [80, 80, 160, 130, 50, 140, 100],
+				fill: true,
+				backgroundColor: gradientFill,
+				borderWidth: 0
+			}, {
+				label: 'Samsung X8',
+				lineTension: 0,
+				pointRadius: 0,
+				data: [90, 140, 50, 120, 160, 90, 90],
+				fill: true,
+				backgroundColor: gradientFill2,
+				borderWidth: 0
+			}]
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			legend: {
+				display: true
+			},
+			scales: {
+				xAxes: [{
+					gridLines: {
+						display: false,
+					},
+					barPercentage: 0.4,
+				}],
+				yAxes: [{
+					gridLines: {
+						drawBorder: false
+					},
+					ticks: {
+						min: 50,
+						max: 200
+					},
+				}]
+			}
+		}
+	});
+
+</script> {{/extend}}

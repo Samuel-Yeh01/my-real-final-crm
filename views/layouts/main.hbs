@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="initial-scale=1">
+      <title>{{> main/title}}</title>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,500i,600,700,800" rel="stylesheet"> 
+      <link rel="stylesheet" href="/css/icons/material-icons.css">
+      <link rel="stylesheet" href="/css/icons/material-design-iconic-font.min.css">
+      <link rel="stylesheet" href="/css/fontawesome.min.css">
+      <link rel="stylesheet" href="/css/themify-icons.css">
+      <link rel="stylesheet" href="/css/dropzone/dropzone.css">
+      <link rel="stylesheet" href="/css/dropzone/basic.css">
+      <link rel="stylesheet" href="/css/animate.css">
+      <link rel="stylesheet" href="/plugins/quillEditor/quill.core.css">
+      <link rel="stylesheet" href="/plugins/quillEditor/quill.snow.css">
+      <link rel="stylesheet" href="/plugins/calendar/fullcalendar.min.css">
+      <link rel="stylesheet" href="/plugins/switch/minitoggle.css">
+      <link rel="stylesheet" href="/css/app.css">
+   </head>
+   <body class="hold-transition">
+      <div class="preloader-wrapper-sec">
+         <div class="preloader-wrapper active">
+            <div class="spinner-layer spinner-red-only">
+               <div class="circle-clipper left">
+                  <div class="circle"></div>
+               </div>
+               <div class="gap-patch">
+                  <div class="circle"></div>
+               </div>
+               <div class="circle-clipper right">
+                  <div class="circle"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="wrapper">
+         <div class="app-wrap">
+            <div class="app-main">
+               <div class="app-navbar">
+                  <div class="app-sidebar sidebar-overlay-dark background-none" style="height: 100%; margin-top: 0px; max-height: calc(100% + 0px); transform: translateX(0px); width: 250px; background-image: url('/images/sidebar-1.jpg');"> 
+                      {{> main/sidebar }} 
+                  </div>
+                  <div class="app-toolbar">
+                      {{> main/header }}
+                  </div>
+               </div>
+               <main class="app-main-content">
+                  <div class="app-content-wrap">   
+                     {{{body}}}
+                  </div>
+               </main>   
+            </div>
+         </div>
+      </div>
+      {{> widgets/recent-chat/recentChat}}
+      <div class="dashboard-overlay"></div>
+      {{> widgets/customizer/customizer}}
+         <script src="/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+         <script src="/plugins/slick/slick.min.js"></script>
+         <script src="/javascripts/materialize.min.js"></script>
+         <script src="/plugins/fullscreen/screen.js"></script>
+         <script src="/javascripts/handlebars/handlebars-v4.0.12.js"></script>
+         <script src="/plugins/countUp/countUp.min.js"></script>
+         <script src="/plugins/chartjs/Chart.min.js"></script>
+         <script src="/plugins/jvector/jquery-jvectormap-2.0.3.min.js"></script>
+         <script src="/plugins/jvector/jquery-jvectormap-world-mill.js"></script>
+         <script src="/plugins/tableSorting/tableSorting.js"></script>
+         <script src="/plugins/quillEditor/quill.js"></script>
+         <script src="/plugins/map/gmaps.js"></script>
+         <script src="/plugins/switch/minitoggle.js"></script>
+         <script src="/plugins/switch/script.js"></script>
+         <script src="/plugins/scrollbar/perfect-scrollbar.min.js"></script>
+         <script src="/javascripts/main.js"></script> 
+         <script type="text/javascript">
+            function collapseSidebar() {
+               var collapse = document.getElementById("sidebar-collapsable").checked;
+               $('body').toggleClass('collapse-sidebar');
+               $(".sidebar-menu li.active .collapsible-body").css("cssText", "display: none !important;");
+            }
+            function rtllayout(){
+               if(document.getElementById("rtllayout").checked){
+                  $('body').addClass('rtl');
+                  $('body.rtl #slide-out2').removeClass("right-aligned");
+                  $('body.rtl #slide-out2').addClass("left-aligned");
+               }else{
+                  $('body').removeClass('rtl');
+                  $('body #slide-out2').removeClass("left-aligned");   
+                  $('body #slide-out2').addClass("right-aligned");
+               }
+            }
+            $('.sidenav-overlay').on('click',function(){
+               $('body.rtl .sidenav.left-aligned').addClass('left-transform');
+            })
+            $('.sidenav2').on('click',function(){
+               $('#slide-out2').removeClass('left-transform');
+            })
+            $(document).ready(function(){
+               $('.sidenav2').sidenav();
+            });
+            
+            function sidebarClass(event){
+               $('.sidebar-color a').removeClass('active');
+               $('#'+event.id).addClass('active');
+               $('.main-sidebar').alterClass( 'sidebar-overlay-*', '' );
+               $('.main-sidebar').addClass(event.id);
+            }
+            
+            function headerClass(event){
+               $('.header-color a').removeClass('active');
+               $('#'+event.id).addClass('active');
+               $('.main-header').alterClass( 'header-color-*', '' );
+               $('.main-header').addClass(event.id);
+            }
+            function sidebarImages(){
+               if(document.getElementById("sidebarImages").checked){
+                  $('.sidebar-images').addClass('display');
+                  $('.app-sidebar').removeClass('background-none');   
+                  $('.sidebar-images.display #1.img-holder').addClass('active');
+               }else{
+                  $('.sidebar-images').removeClass('display');   
+                  $('.app-sidebar').addClass('background-none');   
+               }            
+            }
+            function changebg(event){
+               $('.app-sidebar').css('background-image','url("/images/sidebar-'+event.id+'.jpg")');
+               $('.sidebar-images .img-holder').removeClass('active');
+               $('.sidebar-images #'+event.id+'.img-holder').addClass('active');
+               console.log($('.sidebar-images #'+event.id+'.img-holder').addClass('active'));
+            }
+         </script>
+      {{! Scripts block}} 
+      {{{block "scripts"}}}
+   </body>
+</html>

@@ -1,0 +1,22 @@
+<canvas id="doughnutChart" height="245" width="445"></canvas>
+ 
+{{#extend 'scripts'}}
+	<script type="text/javascript">
+		new Chart(document.getElementById("doughnutChart"), {
+			type: 'doughnut',
+			data: {
+				labels: ["Men", "Women", "Kids"],
+				datasets: [{
+					backgroundColor: ["#5d92f4", "#ff3739", "#ffb70f"],
+					data: [250, 100, 70]
+				}]
+			},
+			options: {
+				legend: {
+					display: false
+				},
+				cutoutPercentage: 50,
+			}
+		});
+	</script>
+{{/extend}}

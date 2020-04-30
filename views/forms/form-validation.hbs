@@ -1,0 +1,50 @@
+{{> widgets/breadcrumb/breadcrumb}}
+<div class="card mb-4">
+	<div class="card-content">
+		<div class="card-header d-flex justify-content-between align-items-center">
+			<h3 class="card-title">{{translation.basicValidation}}</h3>
+		</div>
+		<div class="card-data">
+			<form class="col s12">
+				<div class="input-field">
+					<input id="first_name" type="text" autocomplete="off" class="validate" data-length="10">
+					<label for="first_name">Name</label>
+					<span class="helper-text" data-error="Wrong" data-success="Right"></span>
+				</div>
+				<div class="input-field">
+					<input id="email" type="email" autocomplete="off" class="validate">
+					<label for="email">Email</label>
+					<span class="helper-text" data-error="Wrong" data-success="Right"></span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="card mb-4">
+	<div class="card-content">
+		<div class="card-header d-flex justify-content-between align-items-center">
+			<h3 class="card-title">{{translation.validationWithSubmit}}</h3>
+		</div>
+		<div class="card-data">
+			<form action="#!">
+				<div class="input-field">
+					<input id="name" type="text" autocomplete="off" class="validate" data-length="10" required="">
+					<label for="name">Name</label>
+					<span class="helper-text" data-error="Wrong" data-success="Right"></span>
+				</div>
+				<div class="input-field">
+					<input id="e-mail" type="email" autocomplete="off" class="validate" required="">
+					<label for="e-mail">Email</label>
+					<span class="helper-text" data-error="Wrong" data-success="Right"></span>
+				</div>
+				<button class="btn primary">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
+{{#extend 'scripts'}}
+<script type="text/javascript">
+	$('input#first_name').characterCounter();
+	$('input#name').characterCounter();
+
+</script> {{/extend}}

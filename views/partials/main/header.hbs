@@ -1,0 +1,218 @@
+<header class="main-header header-color-light">
+	<nav>
+		<div class="nav-wrapper">
+			<div class="row wrap mb-0">
+				<div class="col">
+					<a href="javascript:;" class="menu-toggle">
+						<i class="material-icons">menu</i>
+				  	</a>
+				</div>
+				<div class="col s4 hide-on-med-and-down">
+					<form id="form1" class="search-form">
+						<div class="input-field">
+							<input class="mb-0 set-input-mheight" id="search" autocomplete="off" type="search">
+							<label class="label-icon" for="search"><i class="material-icons">search</i></label> {{!-- <i class="material-icons">close</i> --}}
+						</div>
+					</form>
+				</div>
+				<div class="col s8 m7 right">
+					<ul id="nav-mobile" class="app-header-menu right">
+						<li class="hide-on-med-and-down"><a href="{{{ url '/pages/pricing' }}}" class="appendUrl waves-effect waves-light btn">{{translation.plans}}</a></li>
+						<li class="hide-on-med-and-down">
+							<a class='dropdown-trigger' href='#' data-target='dropdown1'>
+								  <i class="zmdi grey--text zmdi-hc-fw font-lg zmdi-apps"></i>
+							 </a>
+							<div class='dropdown-content quick-links-wrapper' id='dropdown1'>
+								<div class="collection">
+									<a href="javascript:;" class="collection-item primary-bg d-flex justify-content-between align-items-center">
+									 	<span>Quick  Links</span>
+									 	<span class="new badge">1</span>
+								  	</a>
+								</div>
+								<div class="drop-list">
+									<ul>
+										<li>
+											<a class="appendUrl" href="{{{ url '/pages/gallery' }}}" class="d-flex">
+												<i class="mr-3 ti-gallery primary-text"></i><span>Gallery</span>
+										  </a>
+										</li>
+										<li>
+											<a class="appendUrl" href="{{{ url '/tables/search-row' }}}" class="d-flex">
+												<i class="mr-3 ti-layout error-text"></i><span>Tables</span>
+										  </a>
+										</li>
+
+										<li>
+											<a class="appendUrl" href="{{{ url '/calendar' }}}" class="d-flex">
+												<i class="mr-3 ti-calendar error-text"></i><span>Calendar</span>
+										  </a>
+										</li>
+
+										<li>
+											<a class="appendUrl" href="{{{ url '/users/profile' }}}" class="d-flex">
+												<i class="mr-3 ti-user success-text"></i><span>User Profile</span>
+										  </a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="hide-on-med-and-down"><a href="javascript:;" id="fullscreenbutton"><i class="material-icons">fullscreen</i></a></li>
+						<li>
+							<a href="javascript:;" class="forumClick sidenav-trigger" data-target="slide-out">
+								<i aria-hidden="true" class="material-icons">forum</i>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="dropdown-trigger" data-target='dropdown2'>
+								  <i class="zmdi grey--text zmdi-notifications-active animated infinite wobble zmdi-hc-fw font-lg"></i>
+							 </a>
+							<div class='dropdown-content notifications-wrapper' id='dropdown2'>
+								<div class="collection">
+									<a href="javascript:;" class="collection-item primary-bg d-flex justify-content-between align-items-center"><span>Notifications</span>
+								 		<span class="new badge">4</span>
+								 	</a>
+								</div>
+								<div class="drop-list">
+									<ul class="block-list">
+										<li>
+											<a class="text-md">
+												<i class="mr-2 text-md text-center zmdi zmdi-storage primary--text"></i>
+												<span>Total App Memory</span>
+										  </a>
+										</li>
+										<li>
+											<a class="text-md">
+												<i class="mr-2 text-md text-center zmdi zmdi-memory warning--text"></i>
+												<span>Total Memory Used</span>
+										  </a>
+										</li>
+										<li>
+											<a class="text-md">
+												<i class="mr-2 text-md text-center zmdi zmdi-email error--text"></i>
+												<span>12 Unread Mail</span>
+										  </a>
+										</li>
+										<li>
+											<a class="text-md">
+												<i class="mr-2 text-md text-center zmdi zmdi-edit success--text"></i>
+												<span>Feedback</span>
+										  </a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;" class="dropdown-trigger" data-target='dropdown3'>
+								<span class="badge-nav badge">{{data.cartProducts.length}}</span>   
+								<i class="zmdi grey--text zmdi-shopping-cart zmdi-hc-fw font-lg"></i>
+							</a>
+							<div class='dropdown-content cart-wrapper' id='dropdown3'>
+								<div class="collection">
+									<a href="javascript:;" class="collection-item primary-bg d-flex justify-content-between align-items-center">
+										<span> Cart</span> <span class="new badge">{{data.cartProducts.length}}</span>
+									</a>
+								</div>
+								<div class="drop-list over-hidden">
+									<div id="ps-cart">
+										<ul class="block-list cart-list">
+											{{#each data.cartProducts}}
+											<li id="productcount_{{id}}" class="d-flex  align-items-center">
+												<div class="product-img mr-3">
+													<img src="{{productImg}}" alt="product-image" width="55" height="55">
+												</div>
+												<div class="product-description">
+													<span class="product-name d-block text-md">{{name}}</span>
+													<span class="product-quantity d-block text-sm text-muted">
+														${{price}} X {{quantity}}
+													</span>
+												</div>
+												<div class="remove-cart">
+													<a href="javascript:;" onclick="deleteCartProduct({{id}});">
+														<i class="error-text zmdi zmdi-close"></i>
+													</a>
+												</div>
+											</li>
+											{{/each}}
+										</ul>
+									</div>
+									<div class="cart-total d-flex justify-content-between align-items-center p-3">
+										<a href="{{url '/ecommerce/cart' }}" class="appendUrl waves-effect waves-light btn text-white" style="line-height:38px">
+											<div class="btn-content"> View Cart</div>
+										</a>
+										<h5>Total: $560</h5>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="hide-on-med-and-down">
+							<a href="" class="dropdown-trigger" id="languages" data-target='dropdown4'>
+                                <img src="/images/flag-icons/en.png" alt="flag-image" class="img-responsive">
+                            </a>
+							<div class='dropdown-content laguage-sec-wrapper' id='dropdown4'>
+								<div class="collection">
+									<a href="javascript:;" class="collection-item primary-bg  d-flex justify-content-between align-items-center"><span>Languages</span> <span class="new badge">2</span></a>
+								</div>
+								<div class="drop-list">
+									<ul>
+										{{#each data.languages}}
+											<li>
+												<a href="javascript:;" id="{{icon}}" onclick=" return changeLanguage(this)">
+													<img src="/images/flag-icons/{{icon}}.png" alt="flag-images" class="img-responsive mr-3">
+													<span>{{name}}</span>
+												</a>
+											</li>
+										{{/each}}
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>
+{{#extend 'scripts'}}
+	<script type="text/javascript">
+		$('.forumClick').on('click',function(){
+			$('#slide-out').addClass('chat-width');
+		});
+		$('body .sidenav-overlay').on('click', function(){
+			$('#slide-out').removeClass('chat-width');
+		})
+		$('.sidenav2').on('click',function(){
+			$('#slide-out2').addClass('customizer-width');
+		})
+		$('body .sidenav-overlay').on('click', function(){
+			$('#slide-out2').removeClass('customizer-width');
+		})
+		function deleteCartProduct(id) {
+			$('#productcount_' + id).remove();
+			if ($("#dropdown3 #ps-cart .cart-list").find("li").length === 0) {
+				$("#dropdown3 .drop-list.over-hidden").remove();
+				$("#dropdown3").append('<div class="cart-empty text-center py-4"><i class="zmdi error-text text-xxl zmdi-shopping-cart"></i><h3></h3></li>');
+				$("#dropdown3 .cart-empty h3").text('No Items Found');
+			}
+		}
+		document.getElementById('fullscreenbutton').addEventListener('click', () => {
+			if (screenfull.enabled) {
+				screenfull.toggle();
+			}
+		});
+
+		new PerfectScrollbar('#ps-cart', {
+			handlers: ['keyboard', 'wheel', 'touch']
+		});
+
+		function changeLanguage(event) {
+			var url = window.location.href;
+			url = url.split("?")[0];
+			url += '?clang=' + event.id;
+			$('#languages img').attr('src', '/images/flag-icons/' + event.id + '.png');
+			window.location.href = url;
+			localStorage.setItem("clang", '?clang=' + event.id);
+		}
+	</script> 
+{{/extend}}

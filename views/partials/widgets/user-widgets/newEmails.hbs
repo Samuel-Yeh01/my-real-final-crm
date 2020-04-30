@@ -1,0 +1,92 @@
+<div class="">
+	<div class="card" id="newEmails">
+		{{{preLoader}}}
+		<div class="cars-header justify-content-between d-flex p-4">
+			<h3 class="card-title">New Emails</h3>
+			{{{ appCardAction "buttoneleven" "sectioneleven" "newEmails"}}}
+		</div>
+		<div>
+			<div>
+				<section class="ps-container ps ps--theme_default ps--active-y">
+					<ul class="new-mail list-unstyled">
+						{{#each data.newEmail}}
+						<li id="new-mail_{{id}}">
+							<div>
+								<div class="d-flex justify-content-between mb-2">
+									<div class="d-flex">
+										<div class="mr-3" style="height: 40px; width: 40px;">
+											<img src="{{sender_avatar}}" alt="user" class="rounded-circle">
+										</div>
+										<div class="mail-title">
+											<h5 class="mb-0">{{sender_name}}</h5>
+											<span class="text-sm text-muted">{{from}}</span>
+										</div>
+									</div>
+									<div class="right"><span class="text-sm">{{date}}</span></div>
+								</div>
+								<h6 class="mb-1">{{subject}}</h6>
+								<div class="mail-content">
+									<p class="text-md">{{message}}</p>
+									<div class="mail-action w-20 text-xs-right">
+										<div>
+											<a class="btn-sm modal-trigger" href="#modal{{id}}">
+                                        <i aria-hidden="true" class="primary-bg text-white btn-icon material-icons">visibility</i>
+                                    </a>
+											<a class="btn-sm modal-trigger" href="#modal1{{id}}">
+                                        <i aria-hidden="true" class="error-bg text-white btn-icon material-icons">delete</i>
+                                    </a>
+											<a class="danger-info btn-sm" href="javascript:;" id="{{id}} " onclick="return replyMail(this)">
+                                       <i aria-hidden="true" class="success-bg text-white btn-icon material-icons">reply</i>
+                                    </a>
+										</div>
+									</div>
+								</div>
+								<div id="reply-message{{id}}" style="display: none;">
+									<input placeholder="Reply Message" autocomplete="off" id="first_name" type="text" class="validate">
+									<a href="javascript:;" class="waves-effect waves-light btn" id="{{id}}" onclick="sendreply(this)">REPLY</a>
+								</div>
+								<div id="modal{{id}}" class="modal" style="max-width:600px">
+									<div class="card p-3 m-0">
+										<div class="py-2 mb-3">
+											<div class="d-flex justify-content-between align-items-center">
+												<div class="d-flex align-items-center">
+													<div class="mr-4">
+														<div style="height: 40px; width: 40px;">
+															<img src="{{sender_avatar}}" alt="user" class="rounded-circle">
+														</div>
+													</div>
+													<div>
+														<p class="text-sm mb-0"> {{sender_name}} </p>
+														<span>{{from}}</span>
+													</div>
+												</div>
+												<div class="wraplist__tile__action">
+													<span>{{date}}</span>
+												</div>
+											</div>
+										</div>
+										<div class="p-3">
+											<h3 class="subject">{{subject}}</h3>
+											<p class=" mb-0"> {{message}} </p>
+										</div>
+									</div>
+								</div>
+								<div id="modal1{{id}}" class="modal" style="max-width:600px">
+									<div class="modal-content">
+										<h3>Are You Sure You Want To Delete?</h3>
+										<p class="text-xl">Are you sure you want to delete this list permanently?</p>
+									</div>
+									<div class="modal-footer">
+										<a href="javascript:;" class="modal-close primary-bg btn-flat">Cancel</a>
+										<a href="javascript:;" id="{{id}}" onclick='return taskDelete(this)' class="modal-close error-bg  btn-flat">Delete</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						{{/each}}
+					</ul>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>

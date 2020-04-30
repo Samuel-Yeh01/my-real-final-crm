@@ -1,0 +1,101 @@
+{{> widgets/breadcrumb/breadcrumb}}
+<div class="layout row wrap mb-0">
+	<div class="col s12 m12 l4 mb-1">
+		{{> widgets/chart-widgets/dailySales}}
+	</div>
+	<div class="col s12 m6 l4 mb-1">
+		{{> widgets/chart-widgets/trafficChannel}}
+	</div>
+	<div class="col s12 m6 l4 mb-1">
+		{{> widgets/chart-widgets/compaignPerformance}}
+	</div>
+</div>
+<div class="layout row wrap mb-0">
+	<div class="col s12 m6 mb-1">
+		{{> widgets/chart-widgets/visitSalesStatistics}}
+	</div>
+	<div class="col s12 m6 mb-1">
+		{{> widgets/chart-widgets/totalEarning}}
+	</div>
+</div>
+<div class="layout row grid-wrap mb-0">
+	<div class="col s12 m12 l8 mb-1">
+		<div class="card w-100">
+			<div class="layout row wrap mb-0 py-4 text-center data-info">
+				<div class="col s12 m4">
+					<div class="data-info-list py-3">
+						<p class="mb-1">{{ translation.averageSteps }}</p>
+						<h2 class="primary-text text-xxl">4562</h2>
+						<div class="box-shadow arrow-box p-4 d-inline-block my-4 border-rad-sm">
+							<i class="material-icons success-text">
+                        arrow_upward
+                     </i>
+						</div>
+						<h2 class="primary-text text-xxl mb-1">3460</h2>
+						<p>{{ translation.todaysStep }}</p>
+					</div>
+				</div>
+				<div class="col s12 m4">
+					<div class="data-info-list py-3">
+						<p class="mb-1">{{ translation.todaysDistance }}</p>
+						<h2 class="success-text text-xxl">7.3 Km</h2>
+						<div class="box-shadow arrow-box p-4 d-inline-block my-4 border-rad-sm">
+							<i class="material-icons error-text">
+                        arrow_downward
+                     </i>
+						</div>
+						<h2 class="success-text text-xxl mb-1">10 Km</h2>
+						<p>{{ translation.todaysDistance }}</p>
+					</div>
+				</div>
+				<div class="col s12 m4">
+					<div class="data-info-list py-3">
+						<p class="mb-1">{{ translation.calories }}</p>
+						<h2 class="secondary-text text-xxl">350</h2>
+						<div class="box-shadow arrow-box p-4 d-inline-block my-4 border-rad-sm">
+							<i class="material-icons success-text">
+                        arrow_upward
+                     </i>
+						</div>
+						<h2 class="secondary-text text-xxl mb-1">550</h2>
+						<p>{{ translation.todaysGoal }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 m12 l4 mb-1">
+		{{> widgets/chart-widgets/weeklySummary}}
+	</div>
+</div>
+<div class="layout row wrap mb-0">
+	<div class="col s12 m6 mb-1">
+		{{> widgets/chart-widgets/productSales}}
+	</div>
+	<div class="col s12 m6 mb-1">
+		{{> widgets/chart-widgets/currentVisitors}}
+	</div>
+</div>
+
+{{#extend 'scripts'}}
+<script type="text/javascript">
+	function elementReload(event) {
+		$('#' + event.id + ' .section-preloader-wrapper').addClass('display');
+		setTimeout(function() {
+			$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
+		}, 1500);
+	}
+	
+	// Full screeen functiionality
+   function showFullScreen(sec_wrap_id){
+      const el = (sec_wrap_id);
+      if (screenfull.enabled) {
+         screenfull.request(el);
+      }
+   };
+   // Section close on dashvboard page
+   function sectionClose(sec_wrap_id){
+      var sec = $(sec_wrap_id).addClass('hide');
+   };
+
+</script> {{/extend}}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{> main/title}}</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<link rel="stylesheet" type="text/css" href="/css/icons/material-design-iconic-font.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/themify-icons.css">
+		<link rel="stylesheet" type="text/css" href="/css/app.css">
+	</head>
+	<body class="session-page">
+		<div class="preloader-wrapper-sec">
+         <div class="preloader-wrapper active">
+            <div class="spinner-layer spinner-red-only">
+               <div class="circle-clipper left">
+                  <div class="circle"></div>
+               </div>
+               <div class="gap-patch">
+                  <div class="circle"></div>
+               </div>
+               <div class="circle-clipper right">
+                  <div class="circle"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+		{{{body}}}
+		<script src="/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+      <script src="/plugins/slick/slick.min.js"></script>
+      <script src="/javascripts/materialize.min.js"></script>
+      <script src="/plugins/fullscreen/screen.js"></script>
+      <script src="/javascripts/handlebars/handlebars-v4.0.12.js"></script>
+      <script src="/plugins/chartjs/Chart.min.js"></script>
+      <script src="/plugins/jvector/jquery-jvectormap-2.0.3.min.js"></script>
+      <script src="/plugins/jvector/jquery-jvectormap-world-mill.js"></script>
+      <script src="/javascripts/main.js"></script> 
+      {{! Scripts block}} 
+      {{{block "scripts"}}}
+	</body>
+</html>

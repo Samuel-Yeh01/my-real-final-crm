@@ -1,0 +1,22 @@
+{{> widgets/breadcrumb/breadcrumb}}
+<div class="row mb-0">
+	<div class="col s12 m8 l9">
+		<div class="" id="hits"></div>
+	</div>
+	<div class="col s12 m4 l3">
+		<div class="style-shop-widget" id="q"></div>
+		<div class="style-shop-widget" id="categories"></div>
+		<div class="style-shop-widget" id="prices"> </div>
+		<div class="style-shop-widget" id="types"></div>
+		<div class="style-shop-widget" id="rating"> </div>
+		<div class="style-shop-widget brands-style" id="brands"></div>
+		<div class="style-shop-widget" id="sort-by-selector"></div>
+		<div class="style-shop-widget" id="clear-all"> </div>
+	</div>
+</div>
+<div id="stats"></div>
+<div id="pagination"></div>
+{{#extend 'scripts'}}
+<script src="/plugins/instantSearch/default.js"></script>
+<script src="/plugins/instantSearch/instantsearch.js"></script>
+{{/extend}}
