@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const data = require("../data");
-// const firebase = require("firebase");
+const firebase = require("firebase");
 // const sess;
 const Auth0Strategy = require("passport-auth0");
 const passport = require("passport");

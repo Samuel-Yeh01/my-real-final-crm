@@ -4,7 +4,6 @@ const passport = require("passport");
 const strategy = new ({
   domain: "express-starter-kit.auth0.com",
   clientID: "06gakYPu7dEebKy2RDPBamB7WetqDX9P",
-  // TODO: Replace this with the client secret for my own app
   clientSecret:
     "33jz33d_0j7MiuH7khFahtND7UHXCyF0M0Sfo0swLWqO6kjZvXKApZFQI1MLbiyV",
   callbackURL:
@@ -17,6 +16,7 @@ const strategy = new ({
 function (accessToken, refreshToken, extraParams, profile, done) {
   return done(null, profile);
 })();
+
 passport.serializeUser(function (user, done) {
   done(null, user);
 });

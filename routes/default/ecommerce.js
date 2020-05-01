@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-// const firebase = require("firebase");
+const firebase = require("firebase");
 const data = require("../data");
 const axios = require("axios");
 const Auth0Strategy = require("passport-auth0");

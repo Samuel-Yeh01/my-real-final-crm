@@ -12,11 +12,10 @@ const minify = require("express-minify");
 const passport = require("passport");
 const compression = require("compression");
 const Handlebars = require("./config/handlebars.config");
-// TODO:以下四個套件&資料夾之關係，待研究
 const dotenv = require("dotenv").config();
 const helpers = require("./helpers/loadHelpers");
-// const firebaseDetails = require("./authentication/firebase/index");
-// const auth0Details = require("./authentication/auth0/index");
+const firebaseDetails = require("./authentication/firebase/index");
+const auth0Details = require("./authentication/auth0/index");
 
 const app = express();
 
