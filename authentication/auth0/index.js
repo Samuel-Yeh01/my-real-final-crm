@@ -9,8 +9,8 @@ const strategy = new ({
   callbackURL:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/callback"
-      : // TODO: Replace this with the with my own heroku app URL
-        "https://expresspanel.herokuapp.com/callback",
+      : // TODO: Replace this "xxx" with the with my own heroku app URL
+        "https://xxx.herokuapp.com/callback",
   state: true,
 },
 function (accessToken, refreshToken, extraParams, profile, done) {
