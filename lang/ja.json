@@ -1,4 +1,7 @@
 {
+  "clients": "クライアント",
+  "clientProfile": "クライアントプロファイル",
+  "clientsList": "クライアントリスト",
   "general": "一般",
   "overview": "概要",
   "customizer": "カスタマイザ",

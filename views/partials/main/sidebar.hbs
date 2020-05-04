@@ -112,30 +112,6 @@
 						</ul>
 					</div>
 				</li>
-				<li class="menu-item pages">
-					<div class="collapsible-header">
-						<a href="javascript:;">
-                     <i class="mr-2 zmdi zmdi-file-plus"></i>
-                     <span>{{translation.pages}}</span>
-                  </a>
-					</div>
-					<div class="collapsible-body">
-						<ul class="treeview-menu">
-							<li class="menu-item">
-								<a class="appendUrl" class="appendUrl" href="{{{ url '/pages/blog' }}}">{{translation.blog}}</a>
-							</li>
-							<li class="menu-item">
-								<a class="appendUrl" href="{{{ url '/pages/gallery' }}}">{{translation.gallery}}</a>
-							</li>
-							<li class="menu-item">
-								<a class="appendUrl" href="{{{ url '/pages/pricing' }}}">{{translation.pricing}}</a>
-							</li>
-							<li class="menu-item">
-								<a class="appendUrl" href="{{{ url '/pages/blank' }}}">{{translation.blank}}</a>
-							</li>
-						</ul>
-					</div>
-				</li>
 				<li class="menu-item session">
 					<div class="collapsible-header">
 						<a href="javascript:;">
@@ -159,6 +135,26 @@
 							</li>
 							<li class="">
 								<a class="appendUrl" href="/session/reset-password">{{translation.resetPassword}}</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="header">{{translation.applications}}</li>
+				<li class="menu-item treeview users">
+					<div class="collapsible-header">
+						<a href="javascript:;">
+							<i class="mr-2 zmdi zmdi-accounts"></i>
+							<span>{{translation.clients}}</span>
+						</a>
+					</div>
+					<div class="collapsible-body">
+						<ul class="treeview-menu">
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/users/profile' }}}">{{translation.clientProfile}}</a>
+							</li>
+							<li class="menu-item">
+								<a class="appendUrl" href="{{{ url '/users/list' }}}">{{translation.clientsList}}</a>
 							</li>
 						</ul>
 					</div>
