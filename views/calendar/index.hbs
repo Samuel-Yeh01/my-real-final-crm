@@ -1,0 +1,41 @@
+{{> widgets/breadcrumb/breadcrumb}}
+<div class="card p-4 mb-4">
+	<div id='calendar'></div>
+</div>
+{{#extend 'scripts'}}
+<script type="text/javascript" src="/plugins/calendar/moment.min.js"></script>
+<script type="text/javascript" src="/plugins/calendar/fullcalendar.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#calendar').fullCalendar({
+			isRTL: false,
+			events: [{
+					title: 'event1',
+					start: '2018-10-25'
+				},
+				{
+					title: 'Birthday Party',
+					start: '2018-10-29',
+					end: '2018-10-30'
+				},
+				{
+					title: 'Office Party',
+					start: '2018-11-15',
+					end: '2018-11-15'
+				},
+				{
+					title: 'Meeting With Client',
+					start: '2018-11-29',
+					end: '2018-11-30'
+				},
+				{
+					title: 'New Year Party',
+					start: '2018-12-31T11:30:00',
+					allDay: false // will make the time show
+				}
+			]
+		})
+	});
+
+</script>
+{{/extend}}
