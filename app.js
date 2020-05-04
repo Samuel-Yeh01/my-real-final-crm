@@ -15,7 +15,7 @@ const Handlebars = require("./config/handlebars.config");
 const dotenv = require("dotenv").config();
 const helpers = require("./helpers/loadHelpers");
 const firebaseDetails = require("./authentication/firebase/index");
-const auth0Details = require("./authentication/auth0/index");
+// const auth0Details = require("./authentication/auth0/index");
 
 const app = express();
 
