@@ -97,3 +97,88 @@ exports.testimonials = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
   },
 ];
+
+exports.languages = [
+  {
+    name: "English",
+    icon: "en",
+  },
+  {
+    name: "Japanese",
+    icon: "ja",
+  },
+];
+exports.sidebarFilters = [
+  {
+    id: 1,
+    class: "sidebar-overlay-dark",
+    name: "message.dark",
+  },
+  {
+    id: 2,
+    class: "sidebar-overlay-light",
+    name: "message.light",
+  },
+  {
+    id: 3,
+    class: "sidebar-overlay-pink",
+    name: "message.danger",
+  },
+  {
+    id: 4,
+    class: "sidebar-overlay-primary",
+    name: "message.primary",
+  },
+  {
+    id: 5,
+    class: "sidebar-overlay-warning",
+    name: "message.warning",
+  },
+  {
+    id: 6,
+    class: "sidebar-overlay-success",
+    name: "message.success",
+  },
+  {
+    id: 7,
+    class: "sidebar-overlay-purple",
+    name: "message.info",
+  },
+];
+// header filter
+exports.headerFilters = [
+  {
+    id: 1,
+    class: "header-color-light",
+  },
+  {
+    id: 2,
+    class: "header-color-primary",
+  },
+  {
+    id: 3,
+    class: "header-color-warning",
+  },
+  {
+    id: 4,
+    class: "header-color-success",
+  },
+  {
+    id: 5,
+    class: "header-color-error",
+  },
+  {
+    id: 6,
+    class: "header-color-info",
+  },
+];
+exports.sidebarBackgroundImages = [
+  {
+    id: 1,
+    imageurl: "/images/side1.jpg",
+  },
+  {
+    id: 2,
+    imageurl: "/images/side2.jpg",
+  },
+];
