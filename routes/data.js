@@ -12,19 +12,6 @@ axios
     exports.todo = response.data;
   });
 
-// New local data @ line 70
-// axios
-//   .get("http://reactify.theironnetwork.org/data/testimonials.js")
-//   .then(function (response) {
-//     exports.testimonials = response.data;
-//   });
-
-// axios
-//   .get("http://reactify.theironnetwork.org/data/express/cartdata.js")
-//   .then(function (response) {
-//     exports.cartdata = response.data;
-//   });
-
 axios
   .get("http://reactify.theironnetwork.org/data/vuely/invoice.js")
   .then(function (response) {
@@ -108,6 +95,7 @@ exports.languages = [
     icon: "ja",
   },
 ];
+// sidebarFilters
 exports.sidebarFilters = [
   {
     id: 1,
@@ -253,5 +241,35 @@ exports.topSelling = [
     name: "AT Jack Radio",
     price: "$340",
     thumbnail: "/images/product-3.png",
+  },
+];
+// recentChat
+exports.recentChat = [
+  {
+    id: 1,
+    active: true,
+    userName: "Jason Oner",
+    avatar: "/images/avatars/user-28.jpg",
+  },
+  {
+    id: 2,
+    active: true,
+    userName: "Ranee Carlson",
+    avatar: "/images/avatars/user-29.jpg",
+  },
+  {
+    id: 3,
+    userName: "Cindy Baker",
+    avatar: "/images/avatars/user-30.jpg",
+  },
+  {
+    id: 4,
+    userName: "Ali Connors",
+    avatar: "/images/avatars/user-31.jpg",
+  },
+  {
+    id: 5,
+    userName: "Harrison Hartman",
+    avatar: "/images/avatars/user-35.jpg",
   },
 ];
