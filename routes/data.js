@@ -19,11 +19,11 @@ axios
 //     exports.testimonials = response.data;
 //   });
 
-axios
-  .get("http://reactify.theironnetwork.org/data/express/cartdata.js")
-  .then(function (response) {
-    exports.cartdata = response.data;
-  });
+// axios
+//   .get("http://reactify.theironnetwork.org/data/express/cartdata.js")
+//   .then(function (response) {
+//     exports.cartdata = response.data;
+//   });
 
 axios
   .get("http://reactify.theironnetwork.org/data/vuely/invoice.js")
@@ -180,5 +180,78 @@ exports.sidebarBackgroundImages = [
   {
     id: 2,
     imageurl: "/images/side2.jpg",
+  },
+];
+// Recent Sale
+exports.recentSales = [
+  {
+    title: "Aadi",
+    sale: "225 Sale",
+    views: "280 Views",
+    price: "$59",
+    img: "/images/icon1.jpeg",
+  },
+  {
+    title: "Event Promo",
+    sale: "225 Sale",
+    views: "280 Views",
+    price: "$59",
+    img: "/images/icon2.jpeg",
+  },
+  {
+    title: "Lawking",
+    sale: "225 Sale",
+    views: "280 Views",
+    price: "$59",
+    img: "/images/icon3.jpeg",
+  },
+  {
+    title: "Adminify",
+    sale: "225 Sale",
+    views: "280 Views",
+    price: "$59",
+    img: "/images/icon4.jpeg",
+  },
+  {
+    title: "Reactify",
+    sale: "225 Sale",
+    views: "280 Views",
+    price: "$59",
+    img: "/images/icon1.jpeg",
+  },
+  {
+    title: "Adminify",
+    sale: "225 Sale",
+    views: "280 Views",
+    price: "$59",
+    img: "/images/icon2.jpeg",
+  },
+  {
+    title: "Reactify",
+    sale: "225 Sale",
+    views: "280 Views",
+    price: "$59",
+    img: "/images/icon3.jpeg",
+  },
+];
+// topSelling
+exports.topSelling = [
+  {
+    id: "1",
+    name: "Bluetooth Speakers",
+    price: "$255",
+    thumbnail: "/images/product-1.png",
+  },
+  {
+    id: "2",
+    name: "Jbm Headphones",
+    price: "$340",
+    thumbnail: "/images/product-2.png",
+  },
+  {
+    id: "3",
+    name: "AT Jack Radio",
+    price: "$340",
+    thumbnail: "/images/product-3.png",
   },
 ];
