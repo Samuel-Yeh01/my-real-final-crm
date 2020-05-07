@@ -172,55 +172,10 @@ router.get("/charts/express-chartjs", function (req, res, next) {
   });
 });
 
-router.get("/icons/themify", function (req, res, next) {
-  res.render("icons/themify", {
-    parent: "Icons",
-    title: "Themify",
-    layout: "main",
-    data: data,
-  });
-});
-
-router.get("/icons/material", function (req, res, next) {
-  res.render("icons/material", {
-    parent: "Icons",
-    title: "Material",
-    layout: "main",
-    data: data,
-  });
-});
-
-router.get("/tables/standard", function (req, res, next) {
-  res.render("tables/standard", {
-    parent: "Tables",
-    title: "Standard",
-    layout: "main",
-    data: data,
-  });
-});
-
-router.get("/tables/responsive-table", function (req, res, next) {
-  res.render("tables/responsiveTable", {
-    parent: "Tables",
-    title: "Slots",
-    layout: "main",
-    data: data,
-  });
-});
-
 router.get("/tables/search-row", function (req, res, next) {
   res.render("tables/searchrow", {
     parent: "Tables",
     title: "Search Row",
-    layout: "main",
-    data: data,
-  });
-});
-
-router.get("/maps/google-maps", function (req, res, next) {
-  res.render("maps/googlemaps", {
-    parent: "Maps",
-    title: "Google Maps",
     layout: "main",
     data: data,
   });
