@@ -118,60 +118,6 @@ router.get("/ecommerce/shop", function (req, res, next) {
   });
 });
 
-router.get("/pages/blog", function (req, res, next) {
-  res.render("pages/blog", {
-    parent: "Pages",
-    title: "Blog",
-    layout: "main",
-    data: data,
-  });
-});
-
-router.get("/pages/gallery", function (req, res, next) {
-  res.render("pages/gallery", {
-    parent: "Pages",
-    title: "Gallery",
-    layout: "main",
-    data: data,
-  });
-});
-
-router.get("/pages/pricing", function (req, res, next) {
-  res.render("pages/pricing", {
-    parent: "Pages",
-    title: "Pricing",
-    layout: "main",
-    data: data,
-  });
-});
-
-router.get("/pages/blank", function (req, res, next) {
-  res.render("pages/blank", {
-    parent: "Pages",
-    title: "Blank",
-    layout: "main",
-    data: data,
-  });
-});
-
-router.get("/forms/form-validation", function (req, res, next) {
-  res.render("forms/form-validation", {
-    parent: "Forms",
-    title: "Form Validation",
-    layout: "main",
-    data: data,
-  });
-});
-
-router.get("/charts/express-chartjs", function (req, res, next) {
-  res.render("charts/chartjs", {
-    parent: "Charts",
-    title: "Express Charts",
-    layout: "main",
-    data: data,
-  });
-});
-
 router.get("/tables/search-row", function (req, res, next) {
   res.render("tables/searchrow", {
     parent: "Tables",
@@ -181,7 +127,7 @@ router.get("/tables/search-row", function (req, res, next) {
   });
 });
 
-router.get("/users/profile", function (req, res, next) {
+router.get("/clients/profile", function (req, res, next) {
   res.render("users/profile", {
     parent: "Users",
     title: "Profile",
@@ -190,7 +136,7 @@ router.get("/users/profile", function (req, res, next) {
   });
 });
 
-router.get("/users/list", function (req, res, next) {
+router.get("/clients/list", function (req, res, next) {
   res.render("users/list", {
     parent: "Users",
     title: "List",
