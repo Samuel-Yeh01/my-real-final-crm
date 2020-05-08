@@ -82,33 +82,6 @@ router.get("/widgets/chart-widgets", function (req, res, next) {
   });
 });
 
-router.get("/ecommerce/cards", function (req, res, next) {
-  res.render("ecommerce/cards", {
-    parent: "Ecommerce",
-    title: "Cards",
-    layout: "main",
-    data: data,
-  });
-});
-
-router.get("/ecommerce/cart", function (req, res, next) {
-  res.render("ecommerce/cart", {
-    parent: "Ecommerce",
-    title: "Cart",
-    layout: "main",
-    data: data,
-  });
-});
-
-router.get("/ecommerce/checkout", function (req, res, next) {
-  res.render("ecommerce/checkout", {
-    parent: "Ecommerce",
-    title: "Checkout",
-    layout: "main",
-    data: data,
-  });
-});
-
 router.get("/ecommerce/shop", function (req, res, next) {
   res.render("ecommerce/shop", {
     parent: "Ecommerce",
