@@ -1,13 +1,14 @@
 const firebase = require("firebase");
+require("dotenv").config();
 const firebaseConfig = {
-  apiKey: "AIzaSyCM3P_Q_gh-2hjX_wuYYTXdqLhCO8eGzJQ",
-  authDomain: "crm-final-project.firebaseapp.com",
-  databaseURL: "https://crm-final-project.firebaseio.com",
-  projectId: "crm-final-project",
-  storageBucket: "crm-final-project.appspot.com",
-  messagingSenderId: "608605938919",
-  appId: "1:608605938919:web:dc94f37186364b47ba6e42",
-  measurementId: "G-ZPCVFBFNJK",
+  apiKey: process.env.APIKEY,
+  authDomain: process.env.AUTHDOMAIN,
+  databaseURL: process.env.DATABASEURL,
+  projectId: process.env.PROJECTID,
+  storageBucket: process.env.STORAGEBUCKET,
+  messagingSenderId: process.env.MESSAGINGSENDERID,
+  appId: process.env.APPID,
+  measurementId: process.env.MEASUREMENTID,
 };
 
 firebase.initializeApp(firebaseConfig);
