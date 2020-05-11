@@ -1,13 +1,13 @@
-let express = require("express");
-let router = express.Router();
-let app = express();
+const express = require("express");
+const router = express.Router();
+const app = express();
 
 router.get("/", function (req, res, next) {
   res.redirect("/default");
 });
 
-let defaultRouting = require("./default/ecommerce");
-let sessionRouting = require("./session/session");
+const defaultRouting = require("./default/ecommerce");
+const sessionRouting = require("./session/session");
 
 router.use("/default", defaultRouting);
 router.use("/", sessionRouting);

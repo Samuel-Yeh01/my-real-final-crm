@@ -136,4 +136,13 @@ function checkCurrentSession(req, res, next) {
   }
 }
 
+router.get("/pages/pricing", function (req, res, next) {
+  res.render("pages/pricing", {
+    parent: "Pages",
+    title: "Pricing",
+    layout: "main",
+    data: data,
+  });
+});
+
 module.exports = router;

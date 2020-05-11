@@ -1,4 +1,4 @@
-let axios = require("axios");
+const axios = require("axios");
 
 axios
   .get("http://reactify.theironnetwork.org/data/vuely/supportRequests.js")
@@ -331,3 +331,39 @@ exports.newEmail = [
     replyTextBox: false,
   },
 ];
+
+exports.features = {
+  basic: [
+    "Granular access and controls",
+    "Desktop sync",
+    "Mobile access",
+    "Version history",
+    "SSL and at-rest encryption",
+    "Two-factor authentication",
+    "Standard business support",
+    "User management",
+    "25,000 API calls per month",
+  ],
+  pro: [
+    "Includes all Starter features plus",
+    "Advanced user and security reporting",
+    "Custom branding",
+    "Mobile security controls",
+    "Integrations with EMM providers",
+    "Data Loss Prevention (DLP)",
+    "Standard business support",
+    "50,000 API calls per month",
+    "25,000 API calls per month",
+  ],
+  advanced: [
+    "Includes all Business features plus",
+    "Unlimited external collaborators",
+    "Full content visibility and management",
+    "Unlimited integrations",
+    "Workflow automations",
+    "Document watermarking",
+    "Device trust (advanced mobile requirements)",
+    "Password policy enforcement",
+    "Metadata and custom templates",
+  ],
+};
