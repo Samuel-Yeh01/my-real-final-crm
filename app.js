@@ -12,7 +12,7 @@ const minify = require("express-minify");
 const passport = require("passport");
 const compression = require("compression");
 const Handlebars = require("./config/handlebars.config");
-const dotenv = require("dotenv").config();
+// const dotenv = require("dotenv").config();
 const helpers = require("./helpers/loadHelpers");
 const firebaseDetails = require("./authentication/firebase/index");
 // const auth0Details = require("./authentication/auth0/index");
@@ -69,7 +69,7 @@ app.use(
   i18n({
     translationsPath: path.join(__dirname, "lang"),
     // use here. Specify translations files path.
-    siteLangs: ["en", "ja"], // add new locales
+    siteLangs: ["en", "ja"], // can add new locales
     cookieLangName: "ulang",
     browserEnable: "true",
     textsVarName: "translation",
