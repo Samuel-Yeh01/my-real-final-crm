@@ -273,3 +273,61 @@ exports.recentChat = [
     avatar: "/images/avatars/user-35.jpg",
   },
 ];
+// newEmail
+exports.newEmail = [
+  {
+    id: 1,
+    from: "john@example.com",
+    subject: "Lorem ipsum is simply dummy text",
+    message:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable.",
+    sender_name: "John Doe",
+    date: "10:30 PM",
+    sender_avatar: "http://reactify.theironnetwork.org/data/images/user-1.jpg",
+    replyTextBox: false,
+  },
+  {
+    id: 2,
+    from: "lisa@example.com",
+    subject: "Contrary to popular belief, Lorem Ipsum",
+    message:
+      "Lorem ipsum is simply dummy random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable.",
+    sender_name: "Lisa Roy",
+    date: "10:50 PM",
+    sender_avatar: "http://reactify.theironnetwork.org/data/images/user-2.jpg",
+    replyTextBox: false,
+  },
+  {
+    id: 3,
+    from: "zara@example.com",
+    subject: "Popular belief, Lorem Ipsum Pessages",
+    message:
+      "Popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,",
+    sender_name: "Zara",
+    date: "Yesterday",
+    sender_avatar: "http://reactify.theironnetwork.org/data/images/user-3.jpg",
+    replyTextBox: false,
+  },
+  {
+    id: 4,
+    from: "mayare@example.com",
+    subject: "It has roots in a piece of classical Latin literature",
+    message:
+      "Contrary to popular belief, Lorem Ipsum Popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,",
+    sender_name: "Mayare Amr",
+    date: "Yesterday",
+    sender_avatar: "http://reactify.theironnetwork.org/data/images/user-4.jpg",
+    replyTextBox: false,
+  },
+  {
+    id: 5,
+    from: "brom@example.com",
+    subject: "Lorem ipsum is simply dummy text for prrinting new tycasting",
+    message:
+      "Popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,",
+    sender_name: "Brom Tay",
+    date: "Yesterday",
+    sender_avatar: "http://reactify.theironnetwork.org/data/images/user-5.jpg",
+    replyTextBox: false,
+  },
+];

@@ -214,28 +214,7 @@
 	</div>
 </div>
 <div class="layout row wrap grid-wrap mb-0">
-	<div class="col s12 m12 l4 mb-1">
-		{{#each data.bloggrid}} {{> widgets/dashboard/blogLayout1}} {{/each}}
-	</div>
 
-	<div class="col s12 m12 l4 mb-1">
-		<div class="card" id="addNewBlog">
-			<div class="card-content">
-				{{{preLoader}}}
-				<div class="card-header d-flex justify-content-between align-items-center">
-					<h3 class="card-title" name="newPost">{{translation.newPost}}</h3>
-					{{{ appCardAction "buttontweleve" "sectiontweleve" "addNewBlog"}}}
-				</div>
-				{{> widgets/dashboard/addNewBlog }}
-			</div>
-		</div>
-	</div>
-   	<div class="col s12 m12 l4 blog-bg-wrap mb-1">
-		<div class="card d-flex">
-			{{> widgets/dashboard/blogLayoutTwo }}
-		</div>
-	</div>
-</div>
 {{#extend 'scripts'}}
 <script src="/javascripts/dashboard/ecommerce.js"></script>
 <script src="/plugins/dropzone/dropzone.min.js"></script>
