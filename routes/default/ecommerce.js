@@ -39,7 +39,7 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/dashboard/ecommerce", function (req, res, next) {
-  getData();
+  // getData();
   res.render("dashboard/ecommerce", {
     title: "Node Xpress App",
     layout: "main",
@@ -47,13 +47,13 @@ router.get("/dashboard/ecommerce", function (req, res, next) {
   });
 });
 
-getData = function () {
-  axios
-    .get("http://reactify.theironnetwork.org/data/vuely/todo.js")
-    .then(function (response) {
-      todo = response.data;
-    });
-};
+// getData = function () {
+//   axios
+//     .get("http://reactify.theironnetwork.org/data/vuely/todo.js")
+//     .then(function (response) {
+//       todo = response.data;
+//     });
+// };
 
 router.get("/widgets/user-widgets", function (req, res, next) {
   res.render("widgets/user", {
