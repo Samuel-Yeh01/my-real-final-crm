@@ -92,14 +92,8 @@
   "unfollow": "アンフォロー",
   "basicValidation": "基本検証",
   "validationWithSubmitAndclear": "サブミット＆クリアによる検証",
-  "submit": [
-    "提出する",
-    "提出する"
-  ],
-  "clear": [
-    "クリア",
-    "クリア"
-  ],
+  "submit": ["提出する", "提出する"],
+  "clear": ["クリア", "クリア"],
   "step1": "ステップ1",
   "step2": "ステップ2",
   "step3": "ステップ3",
@@ -126,7 +120,7 @@
   "calories": "カロリー",
   "weeklySummary": "ウィークリーサマリー",
   "supportTickets": "チケットをサポートする",
-  "todoList": "To Doリスト",
+  "toDoList": "やることリスト",
   "newsletterCampaign": "ニュースレターキャンペーン",
   "currentVisitors": "現在の訪問者",
   "newMembers": "新メンバー",
@@ -250,10 +244,7 @@
   "appBar": "アプリバー",
   "appBarWithExtension": "拡張子付きのApp Bar",
   "visibility": "可視性",
-  "top": [
-    "上",
-    "上"
-  ],
+  "top": ["上", "上"],
   "right": "右",
   "bottom": "ボトム",
   "left": "左",
@@ -275,10 +266,7 @@
   "readMore": "続きを読む",
   "assignNow": "今すぐ割り当て",
   "totalRequest": "総リクエスト",
-  "new": [
-    "新しい",
-    "新しい"
-  ],
+  "new": ["新しい", "新しい"],
   "pending": "保留中",
   "update": "更新",
   "updated10MinAgo": "1時間前に更新されました",
@@ -369,10 +357,7 @@
   "websiteTraffic": "ウェブサイトのトラフィック",
   "agency": "代理店",
   "recent": "最近",
-  "trending": [
-    "トレンド",
-    "トレンド"
-  ],
+  "trending": ["トレンド", "トレンド"],
   "totalPageViews": "合計ページビュー",
   "impressions": "インプレッション",
   "deviceSeparations": "デバイスの分割",
@@ -472,10 +457,7 @@
   "treeview": "ツリー表示",
   "customSelectableIcons": "カスタム選択可能なアイコン",
   "timelines": "タイムライン",
-  "usage": [
-    "使用法",
-    "使用法"
-  ],
+  "usage": ["使用法", "使用法"],
   "scopedSlots": "スコープ付きスロット",
   "asyncItems": "非同期項目",
   "smallDots": "小さな点",

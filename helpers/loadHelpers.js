@@ -1,4 +1,4 @@
-let vcard = require("./v-card"),
+const vcard = require("./v-card"),
   socialShare = require("./social-share"),
   addNewBlog = require("./addNewBlog"),
   appCardAction = require("./appCardAction"),

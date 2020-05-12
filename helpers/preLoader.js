@@ -1,4 +1,4 @@
-let Handlebar = require("handlebars");
+const Handlebar = require("handlebars");
 Handlebar.registerHelper("preLoader", function (data, options) {
   return `<div class="section-preloader-wrapper" style="display: none;">
             <div class="preloader-wrapper active small">

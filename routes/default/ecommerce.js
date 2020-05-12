@@ -82,6 +82,15 @@ router.get("/widgets/chart-widgets", function (req, res, next) {
   });
 });
 
+router.get("/widgets/toDoList", function (req, res, next) {
+  res.render("widgets/toDoList", {
+    // parent: "Widgets",
+    title: "Charts",
+    layout: "main",
+    data: data,
+  });
+});
+
 router.get("/ecommerce/shop", function (req, res, next) {
   res.render("ecommerce/shop", {
     parent: "Ecommerce",
