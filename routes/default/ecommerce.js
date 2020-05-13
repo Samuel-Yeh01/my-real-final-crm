@@ -5,7 +5,7 @@ const data = require("../data");
 const axios = require("axios");
 const Auth0Strategy = require("passport-auth0");
 const passport = require("passport");
-
+const toDoController = require("../../controller/toDoController.js");
 // API Hit
 
 router.use(function (req, res, next) {
@@ -82,15 +82,6 @@ router.get("/widgets/chart-widgets", function (req, res, next) {
   });
 });
 
-router.get("/widgets/toDoList", function (req, res, next) {
-  res.render("widgets/toDoList", {
-    // parent: "Widgets",
-    title: "Charts",
-    layout: "main",
-    data: data,
-  });
-});
-
 router.get("/ecommerce/shop", function (req, res, next) {
   res.render("ecommerce/shop", {
     parent: "Ecommerce",
@@ -152,6 +143,44 @@ router.get("/pages/pricing", function (req, res, next) {
     layout: "main",
     data: data,
   });
+});
+
+// Todo 首頁
+router.get("/widgets/toDoList", function (req, res, next) {
+  res.render("widgets/toDoList", {
+    parent: "Widgets",
+    title: "toDoList",
+    layout: "main",
+    data: data,
+  });
+});
+// 列出全部 Todo
+router.get("/widgets/toDoList/todos", (req, res) => {
+  res.send("列出所有 Todo");
+});
+// 新增一筆 Todo 頁面
+router.get("/widgets/toDoList/todos/new", (req, res) => {
+  res.send("新增 Todo 頁面");
+});
+// 顯示一筆 Todo 的詳細內容
+router.get("/widgets/toDoList/todos/:id", (req, res) => {
+  res.send("顯示 Todo 的詳細內容");
+});
+// 新增一筆  Todo
+router.post("/widgets/toDoList/todos", (req, res) => {
+  res.send("建立 Todo");
+});
+// 修改 Todo 頁面
+router.get("/widgets/toDoList/todos/:id/edit", (req, res) => {
+  res.send("修改 Todo 頁面");
+});
+// 修改 Todo
+router.post("/widgets/toDoList/todos/:id/edit", (req, res) => {
+  res.send("修改 Todo");
+});
+// 刪除 Todo
+router.post("/widgets/toDoList/todos/:id/delete", (req, res) => {
+  res.send("刪除 Todo");
 });
 
 module.exports = router;

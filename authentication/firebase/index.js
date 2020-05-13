@@ -12,56 +12,71 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+// 以下為幫 firestore 建立 seed data
 const db = firebase.firestore();
 
-// 使用範例程式測試是否成功連上
-// db.collection("expense")
-// .doc("breakfast001")
-// .set({
-//   type: "breakfast",
-//   account: "cash",
-//   title: "鮪魚蛋吐司",
-//   dollar: "35",
-// })
-// .then(() => console.log("Document successfully written!"))
-// .catch((error) => console.error("Error writing document: ", error));
+db.collection("toDoList")
+  .doc("toDoList001")
+  .set({
+    id: 1,
+    title: "Arrange meeting for Vuely update",
+    date: "Today 10:35 | By Admin",
+    completed: true,
+  })
+  .then(() => console.log("Document successfully written!"))
+  .catch((error) => console.error("Error writing document: ", error));
 
-// .doc("breakfast001")
-// .set({
-//   test: "我蓋掉拉！",
-// });
-// .doc("breakfast001")
+db.collection("toDoList")
+  .doc("toDoList002")
+  .set({
+    id: 2,
+    title: "Create new pages for theme",
+    date: "Today 10:35 | By Admin",
+    completed: false,
+  })
+  .then(() => console.log("Document successfully written!"))
+  .catch((error) => console.error("Error writing document: ", error));
 
-// .set(
-//   {
-//     test: "用 merge 的話不會蓋掉哦",
-//   },
-//   { merge: true }
-// );
+db.collection("toDoList")
+  .doc("toDoList003")
+  .set({
+    id: 3,
+    title: "Prepare launch image for Lawking",
+    date: "Today 10:35 | By Admin",
+    completed: false,
+  })
+  .then(() => console.log("Document successfully written!"))
+  .catch((error) => console.error("Error writing document: ", error));
 
-// .doc()
-// .set({
-//   type: "lunch",
-//   account: "card",
-//   title: "菲力牛排",
-//   dollar: "1680",
-// });
+db.collection("toDoList")
+  .doc("toDoList004")
+  .set({
+    id: 4,
+    title: "Pay internet bill",
+    date: "Today 10:35 | By Admin",
+    completed: false,
+  })
+  .then(() => console.log("Document successfully written!"))
+  .catch((error) => console.error("Error writing document: ", error));
 
-// .doc("breakfast001")
-// .update({
-//   title: "黑胡椒鐵板麵加蛋",
-//   dollar: "50",
-// })
-// .then(() => console.log("Document successfully updated!"));
+db.collection("toDoList")
+  .doc("toDoList005")
+  .set({
+    id: 5,
+    title: "Generate salary reports",
+    date: "Today 10:35 | By Admin",
+    completed: false,
+  })
+  .then(() => console.log("Document successfully written!"))
+  .catch((error) => console.error("Error writing document: ", error));
 
-// .add({
-//   type: "dinner",
-//   account: "pay",
-//   title: "牛肉炒飯",
-//   dollar: "100",
-// })
-// .then((docRef) => console.log("Document written with ID: ", docRef.id));
-
-// .doc("breakfast001")
-// .delete()
-// .then(() => console.log("Document successfully deleted!"));
+db.collection("toDoList")
+  .doc("toDoList006")
+  .set({
+    id: 6,
+    title: "Update vuely dashboard",
+    date: "Today 10:35 | By Admin",
+    completed: false,
+  })
+  .then(() => console.log("Document successfully written!"))
+  .catch((error) => console.error("Error writing document: ", error));

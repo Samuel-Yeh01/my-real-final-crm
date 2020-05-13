@@ -6,11 +6,11 @@ axios
     exports.supportRequests = response.data;
   });
 
-axios
-  .get("http://reactify.theironnetwork.org/data/vuely/todo.js")
-  .then(function (response) {
-    exports.todo = response.data;
-  });
+// axios
+//   .get("http://reactify.theironnetwork.org/data/vuely/todo.js")
+//   .then(function (response) {
+//     exports.todo = response.data;
+//   });
 
 axios
   .get("http://reactify.theironnetwork.org/data/vuely/invoice.js")
