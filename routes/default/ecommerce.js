@@ -145,15 +145,19 @@ router.get("/pages/pricing", function (req, res, next) {
   });
 });
 
+// router.get("/widgets/toDoList", function (req, res, next) {
+//   res.render("widgets/toDoList", {
+//     parent: "Widgets",
+//     title: "toDoList",
+//     layout: "main",
+//     data: data,
+//   });
+// });
+
+// TODO: toDoList 建造中~
 // Todo 首頁
-router.get("/widgets/toDoList", function (req, res, next) {
-  res.render("widgets/toDoList", {
-    parent: "Widgets",
-    title: "toDoList",
-    layout: "main",
-    data: data,
-  });
-});
+router.get("/widgets/toDoList", toDoController.getToDo);
+
 // 列出全部 Todo
 router.get("/widgets/toDoList/todos", (req, res) => {
   res.send("列出所有 Todo");
