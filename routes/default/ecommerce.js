@@ -151,15 +151,17 @@ router.get("/widgets/toDoList", function (req, res, next) {
   toDoListRef
     .get()
     .then((snapshot) => {
+      let array = [];
       snapshot.forEach((doc) => {
         // console.log(doc.id, "=>", doc.data());
-        console.log(doc.data());
-        res.render("widgets/toDoList", {
-          parent: "Widgets",
-          title: "toDoList",
-          layout: "main",
-          data: doc.data(),
-        });
+        array.push(doc.data());
+      });
+      console.log(array);
+      res.render("widgets/toDoList", {
+        parent: "Widgets",
+        title: "toDoList",
+        layout: "main",
+        data: array,
       });
     })
     .catch((err) => {
