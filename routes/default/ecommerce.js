@@ -6,6 +6,7 @@ const axios = require("axios");
 const Auth0Strategy = require("passport-auth0");
 const passport = require("passport");
 const toDoController = require("../../controller/toDoController.js");
+const db = firebase.firestore();
 // API Hit
 
 router.use(function (req, res, next) {
