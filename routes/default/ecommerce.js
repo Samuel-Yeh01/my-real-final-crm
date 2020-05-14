@@ -7,6 +7,7 @@ const Auth0Strategy = require("passport-auth0");
 const passport = require("passport");
 const toDoController = require("../../controller/toDoController.js");
 const db = firebase.firestore();
+const toDoListRef = db.collection("toDoList");
 // API Hit
 
 router.use(function (req, res, next) {
@@ -146,18 +147,29 @@ router.get("/pages/pricing", function (req, res, next) {
   });
 });
 
-// router.get("/widgets/toDoList", function (req, res, next) {
-//   res.render("widgets/toDoList", {
-//     parent: "Widgets",
-//     title: "toDoList",
-//     layout: "main",
-//     data: data,
-//   });
-// });
+router.get("/widgets/toDoList", function (req, res, next) {
+  toDoListRef
+    .get()
+    .then((snapshot) => {
+      snapshot.forEach((doc) => {
+        // console.log(doc.id, "=>", doc.data());
+        console.log(doc.data());
+        res.render("widgets/toDoList", {
+          parent: "Widgets",
+          title: "toDoList",
+          layout: "main",
+          data: doc.data(),
+        });
+      });
+    })
+    .catch((err) => {
+      console.log("Error getting documents", err);
+    });
+});
 
 // TODO: toDoList 建造中~
 // Todo 首頁
-router.get("/widgets/toDoList", toDoController.getToDo);
+// router.get("/widgets/toDoList", toDoController.getToDo);
 
 // 列出全部 Todo
 router.get("/widgets/toDoList/todos", (req, res) => {
