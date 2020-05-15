@@ -1,6 +1,10 @@
 const firebase = require("firebase");
 const db = firebase.firestore();
 const toDoListRef = db.collection("toDoList");
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+// TODO: 功能改寫完後，記得要把 "localhost:3000" 改成 heroku 的地址~
+global.document = new JSDOM("localhost:3000").window.document;
 
 let toDoController = {
   // 瀏覽todo
@@ -8,15 +12,17 @@ let toDoController = {
     toDoListRef
       .get()
       .then((snapshot) => {
+        let array = [];
         snapshot.forEach((doc) => {
           // console.log(doc.id, "=>", doc.data());
-          console.log(doc.data());
-          res.render("widgets/toDoList", {
-            parent: "Widgets",
-            title: "toDoList",
-            layout: "main",
-            data: doc.data(),
-          });
+          array.push(doc.data());
+        });
+        console.log(array);
+        res.render("widgets/toDoList", {
+          parent: "Widgets",
+          title: "toDoList",
+          layout: "main",
+          data: array,
         });
       })
       .catch((err) => {
@@ -24,7 +30,36 @@ let toDoController = {
       });
   },
   // 張貼todo
-  postToDo: (req, res) => {},
+  postToDo: (req, res) => {
+    let date = document.getElementById("datepicker").value;
+    let title = document.getElementById("title").value;
+    let id = 7; // 暫定為7
+    toDoListRef
+      .add({
+        id: id,
+        title: title,
+        date: date,
+        completed: false,
+      })
+      .get()
+      .then((snapshot) => {
+        let array = [];
+        snapshot.forEach((doc) => {
+          // console.log(doc.id, "=>", doc.data());
+          array.push(doc.data());
+        });
+        console.log(array);
+        res.render("widgets/toDoList", {
+          parent: "Widgets",
+          title: "toDoList",
+          layout: "main",
+          data: array,
+        });
+      })
+      .catch((err) => {
+        console.log("Error getting documents", err);
+      });
+  },
   // 更新todo
   putToDo: (req, res) => {},
   // 刪除todo

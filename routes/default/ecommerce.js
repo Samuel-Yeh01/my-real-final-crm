@@ -147,58 +147,27 @@ router.get("/pages/pricing", function (req, res, next) {
   });
 });
 
-router.get("/widgets/toDoList", function (req, res, next) {
-  toDoListRef
-    .get()
-    .then((snapshot) => {
-      let array = [];
-      snapshot.forEach((doc) => {
-        // console.log(doc.id, "=>", doc.data());
-        array.push(doc.data());
-      });
-      console.log(array);
-      res.render("widgets/toDoList", {
-        parent: "Widgets",
-        title: "toDoList",
-        layout: "main",
-        data: array,
-      });
-    })
-    .catch((err) => {
-      console.log("Error getting documents", err);
-    });
-});
-
-// TODO: toDoList 建造中~
 // Todo 首頁
-// router.get("/widgets/toDoList", toDoController.getToDo);
-
 // 列出全部 Todo
-router.get("/widgets/toDoList/todos", (req, res) => {
-  res.send("列出所有 Todo");
-});
-// 新增一筆 Todo 頁面
-router.get("/widgets/toDoList/todos/new", (req, res) => {
-  res.send("新增 Todo 頁面");
-});
+router.get("/widgets/toDoList", toDoController.getToDo);
+
+// // TODO: 新增一筆 Todo 頁面
+router.get("/widgets/toDoList/new", toDoController.postToDo);
+
 // 顯示一筆 Todo 的詳細內容
-router.get("/widgets/toDoList/todos/:id", (req, res) => {
+router.get("/widgets/toDoList/:id", (req, res) => {
   res.send("顯示 Todo 的詳細內容");
 });
-// 新增一筆  Todo
-router.post("/widgets/toDoList/todos", (req, res) => {
-  res.send("建立 Todo");
-});
 // 修改 Todo 頁面
-router.get("/widgets/toDoList/todos/:id/edit", (req, res) => {
+router.get("/widgets/toDoList/:id/edit", (req, res) => {
   res.send("修改 Todo 頁面");
 });
 // 修改 Todo
-router.post("/widgets/toDoList/todos/:id/edit", (req, res) => {
+router.post("/widgets/toDoList/:id/edit", (req, res) => {
   res.send("修改 Todo");
 });
 // 刪除 Todo
-router.post("/widgets/toDoList/todos/:id/delete", (req, res) => {
+router.post("/widgets/toDoList/:id/delete", (req, res) => {
   res.send("刪除 Todo");
 });
 
