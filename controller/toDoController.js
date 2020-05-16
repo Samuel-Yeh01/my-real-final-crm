@@ -3,6 +3,8 @@ const db = firebase.firestore();
 const toDoListRef = db.collection("toDoList");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
+const sha256 = require("js-sha256");
+
 // TODO: 功能改寫完後，記得要把 "localhost:3000" 改成 heroku 的地址~
 global.document = new JSDOM("localhost:3000").window.document;
 
@@ -30,10 +32,9 @@ let toDoController = {
       });
   },
   // 張貼todo
+
   postToDo: (req, res) => {
-    // let date = document.getElementById("datepicker").value;
-    // let title = document.getElementById("title").value;
-    let id = 7; // 暫定為7
+    let id = sha256("req.body.title");
     return toDoListRef
       .add({
         id: id,
