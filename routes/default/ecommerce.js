@@ -151,8 +151,8 @@ router.get("/pages/pricing", function (req, res, next) {
 // 列出全部 Todo
 router.get("/widgets/toDoList", toDoController.getToDo);
 
-// // TODO: 新增一筆 Todo 頁面
-router.get("/widgets/toDoList/new", toDoController.postToDo);
+// // TODO: 新增一筆 Todo
+router.post("/widgets/toDoList/new", toDoController.postToDo);
 
 // 顯示一筆 Todo 的詳細內容
 router.get("/widgets/toDoList/:id", (req, res) => {

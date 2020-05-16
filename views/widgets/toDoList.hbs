@@ -66,22 +66,24 @@
                   <i class="material-icons">add</i>{{translation.addNew}}
                </div>
             </a>
-            <div id="modal" class="modal" style="overflow:visible;">
-               <div class="modal-content">
-                  <div class="modal-title">
-                     <h4>Add To Do</h4>
+            <form action="/widgets/toDoList/new"  method="POST">
+               <div id="modal" class="modal" style="overflow:visible;">
+                  <div class="modal-content">
+                     <div class="modal-title">
+                        <h4>Add To Do</h4>
+                     </div>
+                     <div>
+                        <input type="text" id='datepicker' autocomplete="off" class="datepicker" placeholder="Schedule Date">
+                        <input placeholder="Title" id="title" autocomplete="off" type="text" class="validate">
+                     </div>
                   </div>
-                  <div>
-                     <input type="text" id='datepicker' autocomplete="off" class="datepicker" placeholder="Schedule Date">
-                     <input placeholder="Title" id="title" autocomplete="off" type="text" class="validate">
+                  <div class="modal-footer">
+                     <a href="javascript:;" class="modal-close  btn btn-sm error-bg">Cancel</a>
+                     <input type="submit" value="Submit" class="modal-close btn btn-sm primary-bg">
+                     </a>
                   </div>
                </div>
-               <div class="modal-footer">
-                  <a href="javascript:;" class="modal-close  btn btn-sm error-bg">Cancel</a>
-                  <a href="{{{ url '/widgets/toDoList/new' }}}" class="modal-close btn btn-sm primary-bg" >Add New
-                  </a>
-               </div>
-            </div>
+            </form>
          </div>
       </div>
    </div>
