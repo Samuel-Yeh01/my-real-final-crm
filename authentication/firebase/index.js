@@ -20,7 +20,7 @@ db.collection("toDoList")
   .set({
     id: 1,
     title: "Arrange meeting for Vuely update",
-    date: "Today 10:35 | By Admin",
+    date: "May 19, 2020",
     completed: true,
   })
   .then(() => console.log("Document successfully written!"))
@@ -31,7 +31,7 @@ db.collection("toDoList")
   .set({
     id: 2,
     title: "Create new pages for theme",
-    date: "Today 10:35 | By Admin",
+    date: "May 20, 2020",
     completed: false,
   })
   .then(() => console.log("Document successfully written!"))
@@ -42,7 +42,7 @@ db.collection("toDoList")
   .set({
     id: 3,
     title: "Prepare launch image for Lawking",
-    date: "Today 10:35 | By Admin",
+    date: "May 20, 2020",
     completed: false,
   })
   .then(() => console.log("Document successfully written!"))
@@ -53,7 +53,7 @@ db.collection("toDoList")
   .set({
     id: 4,
     title: "Pay internet bill",
-    date: "Today 10:35 | By Admin",
+    date: "May 20, 2020",
     completed: false,
   })
   .then(() => console.log("Document successfully written!"))
@@ -64,7 +64,7 @@ db.collection("toDoList")
   .set({
     id: 5,
     title: "Generate salary reports",
-    date: "Today 10:35 | By Admin",
+    date: "May 20, 2020",
     completed: false,
   })
   .then(() => console.log("Document successfully written!"))
@@ -74,23 +74,9 @@ db.collection("toDoList")
   .doc("toDoList006")
   .set({
     id: 6,
-    title: "Update vuely dashboard",
-    date: "Today 10:35 | By Admin",
+    title: "Update dashboard",
+    date: "May 21, 2020",
     completed: false,
   })
   .then(() => console.log("Document successfully written!"))
   .catch((error) => console.error("Error writing document: ", error));
-
-// Read 功能成功!
-// db.collection("toDoList")
-//   .where("id", ">=", 0)
-//   .get()
-//   .then(function (querySnapshot) {
-//     querySnapshot.forEach(function (doc) {
-//       // doc.data() is never undefined for query doc snapshots
-//       console.log(doc.id, " => ", doc.data());
-//     });
-//   })
-//   .catch(function (error) {
-//     console.log("Error getting documents: ", error);
-//   });

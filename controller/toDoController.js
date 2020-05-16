@@ -31,30 +31,18 @@ let toDoController = {
   },
   // 張貼todo
   postToDo: (req, res) => {
-    let date = document.getElementById("datepicker").value;
-    let title = document.getElementById("title").value;
+    // let date = document.getElementById("datepicker").value;
+    // let title = document.getElementById("title").value;
     let id = 7; // 暫定為7
-    toDoListRef
+    return toDoListRef
       .add({
         id: id,
-        title: title,
-        date: date,
+        title: req.body.title,
+        date: req.body.date,
         completed: false,
       })
-      .get()
       .then((snapshot) => {
-        let array = [];
-        snapshot.forEach((doc) => {
-          // console.log(doc.id, "=>", doc.data());
-          array.push(doc.data());
-        });
-        console.log(array);
-        res.render("widgets/toDoList", {
-          parent: "Widgets",
-          title: "toDoList",
-          layout: "main",
-          data: array,
-        });
+        res.redirect("/default/widgets/toDoList");
       })
       .catch((err) => {
         console.log("Error getting documents", err);
