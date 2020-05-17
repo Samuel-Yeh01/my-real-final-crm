@@ -52,9 +52,10 @@ let toDoController = {
   putToDo: (req, res) => {},
   // 刪除todo
   deleteToDo: (req, res) => {
-    let id = req.params.id;
+    let toDoId = req.params.id;
+    console.log(toDoId);
     return toDoListRef
-      .doc(id)
+      .doc(toDoId)
       .delete()
       .then(() => {
         res.redirect("/default/widgets/toDoList");
