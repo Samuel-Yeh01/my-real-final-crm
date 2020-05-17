@@ -16,6 +16,8 @@ const dotenv = require("dotenv").config();
 const helpers = require("./helpers/loadHelpers");
 const firebaseDetails = require("./authentication/firebase/index");
 // const auth0Details = require("./authentication/auth0/index");
+// 引用 method-override
+const methodOverride = require("method-override");
 
 const app = express();
 
@@ -29,6 +31,8 @@ app.use(
     extended: true,
   })
 );
+// 設定 method-override
+app.use(methodOverride("_method"));
 
 const indexRouter = require("./routes/index");
 
