@@ -154,6 +154,9 @@ router.get("/widgets/toDoList", toDoController.getToDo);
 // // TODO: 新增一筆 Todo
 router.post("/widgets/toDoList/new", toDoController.postToDo);
 
+// 刪除 Todo
+router.delete("/widgets/toDoList/:id", toDoController.deleteToDo);
+
 // 顯示一筆 Todo 的詳細內容
 router.get("/widgets/toDoList/:id", (req, res) => {
   res.send("顯示 Todo 的詳細內容");
@@ -161,14 +164,6 @@ router.get("/widgets/toDoList/:id", (req, res) => {
 // 修改 Todo 頁面
 router.get("/widgets/toDoList/:id/edit", (req, res) => {
   res.send("修改 Todo 頁面");
-});
-// 修改 Todo
-router.post("/widgets/toDoList/:id/edit", (req, res) => {
-  res.send("修改 Todo");
-});
-// 刪除 Todo
-router.post("/widgets/toDoList/:id/delete", (req, res) => {
-  res.send("刪除 Todo");
 });
 
 module.exports = router;

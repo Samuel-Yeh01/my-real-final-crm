@@ -21,6 +21,15 @@ const app = express();
 
 app.use(compression());
 
+// parse application/json
+app.use(bodyParser.json());
+// setting body-parser
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+
 const indexRouter = require("./routes/index");
 
 app.use(logger("dev"));
@@ -48,13 +57,6 @@ app.use(function (req, res, next) {
 Handlebar.registerHelper("url", function (link) {
   return "/" + split_path[1] + link;
 });
-
-app.use(bodyParser.json());
-app.use(
-  bodyParser.urlencoded({
-    extended: false,
-  })
-);
 
 app.use(
   minify({

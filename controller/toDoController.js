@@ -32,7 +32,6 @@ let toDoController = {
       });
   },
   // 張貼todo
-
   postToDo: (req, res) => {
     let id = sha256("req.body.title");
     return toDoListRef
@@ -46,13 +45,24 @@ let toDoController = {
         res.redirect("/default/widgets/toDoList");
       })
       .catch((err) => {
-        console.log("Error getting documents", err);
+        console.log("Error adding documents", err);
       });
   },
   // 更新todo
   putToDo: (req, res) => {},
   // 刪除todo
-  deleteToDo: (req, res) => {},
+  deleteToDo: (req, res) => {
+    let id = req.params.id;
+    return toDoListRef
+      .doc(id)
+      .delete()
+      .then(() => {
+        res.redirect("/default/widgets/toDoList");
+      })
+      .catch((err) => {
+        console.log("Error deleting documents", err);
+      });
+  },
 };
 
 module.exports = toDoController;
