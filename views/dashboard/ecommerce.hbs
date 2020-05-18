@@ -119,11 +119,6 @@
 	<div class="col s12 m12 l4 mb-1">
 		{{> widgets/dashboard/supportRequest}}
 	</div>
-	<div class="col s12 m12 l4 mb-1">
-		<div class="todo-list-section">
-			{{> widgets/dashboard/toDoList}}
-		</div>
-	</div>
 </div>
 <div class="layout row wrap grid-wrap mb-0">
 	<div class="col s12 m12 l6 mb-1">
@@ -265,14 +260,6 @@
 				$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
 			}, 1500);
 		}
-		Dropzone.autoDiscover = false;
-		$('#id_dropzone').dropzone({
-			maxFiles: 1,
-			maxFilesize: 0.5,
-			url: 'https://httpbin.org/post',
-			method: 'post'
-		});
-		$('.tooltip').tooltip();
 
 	</script>
 	{{/extend}}
