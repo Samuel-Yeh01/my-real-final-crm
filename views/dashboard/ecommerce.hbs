@@ -2,11 +2,11 @@
 	<div class="dash-title">
 		<span>{{translation.overview}}</span>
 		<span>
-         <span>
-            <a href="javascript:void(0);" class="tooltip" data-position="top" data-tooltip="Dashboard Overview">
-               <i aria-hidden="true" class="ti ti-help-alt theme--light"></i>
-            </a>
-         </span>
+			<span>
+				<a href="javascript:void(0);" class="tooltip" data-position="top" data-tooltip="Dashboard Overview">
+					<i aria-hidden="true" class="ti ti-help-alt theme--light"></i>
+				</a>
+			</span>
 		</span>
 	</div>
 </div>
@@ -81,7 +81,7 @@
 						<div class="overlay-content d-custom-flex justify-center align-items-center">
 							<span class="text-xxl fw-bold">$2000</span>
 						</div>
-					</div>					
+					</div>
 				</div>
 				<div>
 					<div class="d-flex justify-content-between align-items-center">
@@ -215,157 +215,39 @@
 </div>
 <div class="layout row wrap grid-wrap mb-0">
 
-{{#extend 'scripts'}}
-<script src="/javascripts/dashboard/ecommerce.js"></script>
-<script src="/plugins/dropzone/dropzone.min.js"></script>
-<script type="text/javascript">
-	function onToDochange(event) {
-		$.ajax({
-				url: "/default/dashboard/ecommerce/toDoList",
-				type: "POST",
-				data: {
-					id: event.id
-				},
-				body: JSON.stringify({
-					"id": event.id
-				})
-			})
-			.done(function(datas) {
-				console.log("Sample of data:", datas);
-			});
-		$('#todo_' + event.id + ' .todo-title').toggleClass('complete');
-		$('.todo-list-section .section-preloader-wrapper').addClass('display');
-		setTimeout(function() {
-			$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
-			M.toast({
-				html: 'ToDo Update Successfully',
-				displayLength: '1500'
-			})
-		}, 1500);
-	};
-
-	function orderDelete(data) {
-		$('#row_' + data.id).remove();
-		if ($("#recentOrders tbody").find("tr").length === 0) {
-			$("#recentOrders tbody").append('<tr><td colspan="5" class="nodata"></td></tr>');
-			$("#recentOrders tbody .nodata").text('No Data Available');
+	{{#extend 'scripts'}}
+	<script src="/javascripts/dashboard/ecommerce.js"></script>
+	<script src="/plugins/dropzone/dropzone.min.js"></script>
+	<script type="text/javascript">
+		function orderDelete(data) {
+			$('#row_' + data.id).remove();
+			if ($("#recentOrders tbody").find("tr").length === 0) {
+				$("#recentOrders tbody").append('<tr><td colspan="5" class="nodata"></td></tr>');
+				$("#recentOrders tbody .nodata").text('No Data Available');
+			}
 		}
-	}
 
-	function taskDelete(event) {
-		$.ajax({
-				url: "/default/dashboard/ecommerce/toDoList",
-				type: "POST",
-				data: {
-					id: event.id
-				},
-				body: JSON.stringify({
-					"id": event.id
-				})
-			})
-			.done(function(datas) {
-				console.log("Sample of data:", datas);
-			});
-
-		$('.todo-list-section .section-preloader-wrapper').addClass('display');
-		if ($("#toDoList .list-hover").find(".list-item").length === 1) {
-			$('#toDoList .list-hover #sec_1').text("No Data Available");
+		function reload(event) {
+			$('.todo-list-section .section-preloader-wrapper').addClass('display');
+			setTimeout(function () {
+				$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
+			}, 1500);
 		}
-		setTimeout(function() {
-			$('#section_' + event.id).remove();
-			$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
-			M.toast({
-				html: 'ToDo Delete Successfully',
-				displayLength: '1500'
-			})
-		}, 1500);
-	}
 
-	function addtodoTask() {
-		var id ='';
-		if($('.section:last').attr('id') == undefined){
-			id = 'section_1';
-		}else{
-			id = $('.section:last').attr('id');
-			console.log(id);
-		}
-		var split_id = id.split('_');
-		var new_id = ++split_id[1];
-		var date = document.getElementById('datepicker').value;
-		var title = document.getElementById('title').value;
-		if (date && title != '') {
-			var $info = $(`<div class="section list-item to-do-list" id="section_` + new_id + `">
-                           <div class="list-item-content d-flex" id="todo_` + new_id + `">
-                              <div class="to-do-check">                       
-                                 <label><input type="checkbox" name="task" id=` + new_id + ` autocomplete="off" onchange="return onToDochange(this)" ><span></span></label>
-                              </div>
-                              <div class="to-do-content">
-                                    <div class="todo-title">
-                                       <h5>` + title + `</h5>
-                                    </div>
-                                 <div class="">
-                                    <span class="text-sm">` + date + `</span>
-                                 </div>
-                              </div>
-                           </div> 
-                           <a class="remove-btn btn-floating modal-trigger error-bg" href="#modal` + new_id + `">
-                              <i aria-hidden="true" class="zmdi zmdi-delete material-icons theme--dark"></i>
-                           </a>
-                           <div id="modal` + new_id + `" class="modal" tabindex="0">
-                              <div class="modal-content">
-                                 <h4>Are You Sure You Want To Delete?</h4>
-                                 <h6>Are you sure you want to delete this list permanently?</h6>
-                              </div>
-                              <div class="modal-footer">
-                                 <a href="javascript:;" autocomplete="off" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                                 <a href="javascript:;" autocomplete="off" id=` + new_id + ` onclick="return taskDelete(this)" class="modal-close waves-effect waves-green btn-flat">Delete</a>
-                              </div>
-                           </div>
-                        </div>`);
-			var $block = '';
-			if($('.section:last').attr('id') == undefined){
-				$block = $('#sec_1');
-				$('.todo-list-section .section-preloader-wrapper').addClass('display');
-				setTimeout(function() {
-					$info.insertAfter($block);
-					$('#sec_1').css('display','none');
-					$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
-				}, 1500);
-			}else{
-				console.log('etststest');
-				var $block = $('#' + id);
-				console.log($block);
-				$('.todo-list-section .section-preloader-wrapper').addClass('display');
-				setTimeout(function() {
-					$info.insertAfter($block);
-					$('#toDoList .to-do-wrapper #sec_1').remove();
-					$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
-				}, 1500);	
-			}		
-		}
-	}
+		// Full screeen functiionality
+		function showFullScreen(sec_wrap_id) {
+			const el = (sec_wrap_id);
+			if (screenfull.enabled) {
+				screenfull.request(el);
+			}
+		};
+		// Section close on dashvboard page
+		function sectionClose(sec_wrap_id) {
+			var sec = $(sec_wrap_id).addClass('hide');
+		};
 
-	function reload(event) {
-		$('.todo-list-section .section-preloader-wrapper').addClass('display');
-		setTimeout(function() {
-			$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
-		}, 1500);
-	}
-	
-	// Full screeen functiionality
-   function showFullScreen(sec_wrap_id){
-      const el = (sec_wrap_id);
-      if (screenfull.enabled) {
-         screenfull.request(el);
-      }
-   };
-   // Section close on dashvboard page
-   function sectionClose(sec_wrap_id){
-      var sec = $(sec_wrap_id).addClass('hide');
-   };
-
-	function elementReload(event) {
-		$.ajax({
+		function elementReload(event) {
+			$.ajax({
 				url: "/default/dashboard/ecommerce",
 				type: "POST",
 				data: {
@@ -375,22 +257,22 @@
 					"id": event.id
 				})
 			})
-			.done(function(datas) {
-				console.log("Sample of data:", datas);
-			});
-		$('#' + event.id + ' .section-preloader-wrapper').addClass('display');
-		setTimeout(function() {
-			$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
-		}, 1500);
-	}
-	Dropzone.autoDiscover = false;
-	$('#id_dropzone').dropzone({
-		maxFiles: 1,
-		maxFilesize: 0.5,
-		url: 'https://httpbin.org/post',
-		method: 'post'
-	});
-	$('.tooltip').tooltip();
+				.done(function (datas) {
+					console.log("Sample of data:", datas);
+				});
+			$('#' + event.id + ' .section-preloader-wrapper').addClass('display');
+			setTimeout(function () {
+				$(".section-preloader-wrapper").fadeOut("slow").removeClass('display');
+			}, 1500);
+		}
+		Dropzone.autoDiscover = false;
+		$('#id_dropzone').dropzone({
+			maxFiles: 1,
+			maxFilesize: 0.5,
+			url: 'https://httpbin.org/post',
+			method: 'post'
+		});
+		$('.tooltip').tooltip();
 
-</script>
-{{/extend}}
+	</script>
+	{{/extend}}
