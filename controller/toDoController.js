@@ -1,9 +1,11 @@
 const firebase = require("firebase");
 const db = firebase.firestore();
-const toDoListRef = db.collection("toDoList");
+const toDoListCollectionRef = db.collection("toDoList");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const sha256 = require("js-sha256");
+
+const { Firestore } = require("@google-cloud/firestore");
 
 // TODO: 功能改寫完後，記得要把 "localhost:3000" 改成 heroku 的地址~
 global.document = new JSDOM("localhost:3000").window.document;
@@ -11,7 +13,7 @@ global.document = new JSDOM("localhost:3000").window.document;
 let toDoController = {
   // 瀏覽todo
   getToDo: (req, res) => {
-    toDoListRef
+    toDoListCollectionRef
       .get()
       .then((snapshot) => {
         let array = [];
@@ -34,7 +36,7 @@ let toDoController = {
   // 張貼todo
   postToDo: (req, res) => {
     let id = sha256("req.body.title");
-    return toDoListRef
+    return toDoListCollectionRef
       .add({
         id: id,
         title: req.body.title,
@@ -52,16 +54,27 @@ let toDoController = {
   putToDo: (req, res) => {},
   // 刪除todo
   deleteToDo: (req, res) => {
-    let toDoId = req.params.id;
-    console.log(toDoId);
-    return toDoListRef
-      .doc(toDoId)
-      .delete()
+    console.log(req.params.id);
+    toDoListCollectionRef
+      .where("id", "==", req.params.id)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          doc.ref
+            .delete()
+            .then(() => {
+              console.log("Document successfully deleted!");
+            })
+            .catch(function (error) {
+              console.error("Error removing document: ", error);
+            });
+        });
+      })
       .then(() => {
         res.redirect("/default/widgets/toDoList");
       })
-      .catch((err) => {
-        console.log("Error deleting documents", err);
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
       });
   },
 };
