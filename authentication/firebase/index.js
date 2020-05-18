@@ -18,7 +18,7 @@ const db = firebase.firestore();
 db.collection("toDoList")
   .doc("toDoList001")
   .set({
-    id: 1,
+    id: "1",
     title: "Arrange meeting for Vuely update",
     date: "May 19, 2020",
     completed: true,
@@ -29,7 +29,7 @@ db.collection("toDoList")
 db.collection("toDoList")
   .doc("toDoList002")
   .set({
-    id: 2,
+    id: "2",
     title: "Create new pages for theme",
     date: "May 20, 2020",
     completed: false,
@@ -40,7 +40,7 @@ db.collection("toDoList")
 db.collection("toDoList")
   .doc("toDoList003")
   .set({
-    id: 3,
+    id: "3",
     title: "Prepare launch image for Lawking",
     date: "May 20, 2020",
     completed: false,
@@ -51,7 +51,7 @@ db.collection("toDoList")
 db.collection("toDoList")
   .doc("toDoList004")
   .set({
-    id: 4,
+    id: "4",
     title: "Pay internet bill",
     date: "May 20, 2020",
     completed: false,
@@ -62,7 +62,7 @@ db.collection("toDoList")
 db.collection("toDoList")
   .doc("toDoList005")
   .set({
-    id: 5,
+    id: "5",
     title: "Generate salary reports",
     date: "May 20, 2020",
     completed: false,
@@ -73,7 +73,7 @@ db.collection("toDoList")
 db.collection("toDoList")
   .doc("toDoList006")
   .set({
-    id: 6,
+    id: "6",
     title: "Update dashboard",
     date: "May 21, 2020",
     completed: false,
