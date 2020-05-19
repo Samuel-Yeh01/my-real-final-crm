@@ -19,7 +19,7 @@ db.collection("toDoList")
   .doc("toDoList001")
   .set({
     id: "1",
-    title: "Arrange meeting for Vuely update",
+    title: "Arrange meeting for sprint update",
     date: "May 19, 2020",
     completed: true,
   })

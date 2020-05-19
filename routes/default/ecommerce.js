@@ -49,14 +49,6 @@ router.get("/dashboard/ecommerce", function (req, res, next) {
   });
 });
 
-// getData = function () {
-//   axios
-//     .get("http://reactify.theironnetwork.org/data/vuely/todo.js")
-//     .then(function (response) {
-//       todo = response.data;
-//     });
-// };
-
 router.get("/widgets/user-widgets", function (req, res, next) {
   res.render("widgets/user", {
     parent: "Widgets",
