@@ -2,15 +2,16 @@
 	<div id="ps-sidebar">
 		<div class="site-logo">
 			<a href="/" class="router-link-active">
-         <img src="/images/site-logo.png" alt="site logo" width="100" height="30">
-      </a>
+				<img src="/images/site-logo.png" alt="site logo" width="100" height="30">
+			</a>
 		</div>
 		<div class="sidebar-nav">
 			<div class="sidebar-user px-4">
 				<div class="dashboard-sidebar-profile d-flex justify-content-between mb-3">
 					<div class="profile-image-wrapper align-self-center">
 						<div style="height: 40px; width: 40px;">
-							<img class="rounded-circle img-responsive" src="/images/avatars/user-13.jpg" alt="avatar" width="40" height="40">
+							<img class="rounded-circle img-responsive" src="/images/avatars/user-13.jpg" alt="avatar" width="40"
+								height="40">
 						</div>
 					</div>
 					<div class="profile-title-content ml-3 align-self-center">
@@ -21,33 +22,33 @@
 					<div class="align-self-center mt-2 sidebar-user-drop">
 						<div class="">
 							<a class="dropdown-trigger1" href="javascript:;" data-target="dropdown64">
-                        <i aria-hidden="true" class="icon material-icons theme--dark">more_vert</i>
-                     </a>
+								<i aria-hidden="true" class="icon material-icons theme--dark">more_vert</i>
+							</a>
 							<div class="dropdown-content laguage-sec-wrapper" id="dropdown64">
 								<div class="collection" tabindex="0">
 									<a href="javascript:;" class="collection-item primary-bg">
-                              <span class="fw-bold d-block"> John Leider </span>
-                              <span class="text-sm d-block"> info@example.com</span>
-                           </a>
+										<span class="fw-bold d-block"> John Leider </span>
+										<span class="text-sm d-block"> info@example.com</span>
+									</a>
 								</div>
 								<div class="drop-list" tabindex="0">
 									<div>
 										<a class="appendUrl" href="{{{ url '/users/profile' }}}">
-                                 <i class="ti-user mr-3 primary-text"></i>
-                                 <span>User Profile</span>
-                              </a>
+											<i class="ti-user mr-3 primary-text"></i>
+											<span>User Profile</span>
+										</a>
 									</div>
 									<div>
 										<a class="appendUrl" href="{{{ url '/users/list' }}}">
-                                 <i class="ti-bell mr-3 success-text"></i>
-                                 <span>User Lists</span>
-                              </a>
+											<i class="ti-bell mr-3 success-text"></i>
+											<span>User Lists</span>
+										</a>
 									</div>
 									<div>
 										<a href="javascript:;" onclick="logout();">
-                                 <i class="ti-power-off mr-3 error-text"></i>
-                                 <span>Logout</span>
-                              </a>
+											<i class="ti-power-off mr-3 error-text"></i>
+											<span>Logout</span>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -60,8 +61,8 @@
 				<li class="active menu-item dashboard">
 					<div class="collapsible-header">
 						<a href="javascript:;">
-                     <i class="mr-2 zmdi zmdi-view-dashboard"></i> <span>{{translation.dashboard}}</span>
-                  </a>
+							<i class="mr-2 zmdi zmdi-view-dashboard"></i> <span>{{translation.dashboard}}</span>
+						</a>
 					</div>
 					<div class="collapsible-body">
 						<ul class="">
@@ -74,8 +75,8 @@
 				<li class="menu-item widgets">
 					<div class="collapsible-header">
 						<a href="javascript:;">
-                     <i class="mr-2 zmdi zmdi-widgets"></i> <span>{{translation.widgets}}</span>
-                  </a>
+							<i class="mr-2 zmdi zmdi-widgets"></i> <span>{{translation.widgets}}</span>
+						</a>
 					</div>
 					<div class="collapsible-body">
 						<ul class="treeview-menu">
@@ -94,9 +95,9 @@
 				<li class="menu-item ecommerce">
 					<div class="collapsible-header">
 						<a href="javascript:;">
-                     <i class="mr-2 zmdi zmdi-shopping-cart"></i>
-                     <span>{{translation.ecommerce}}</span>
-                 </a>
+							<i class="mr-2 zmdi zmdi-shopping-cart"></i>
+							<span>{{translation.ecommerce}}</span>
+						</a>
 					</div>
 					<div class="collapsible-body">
 						<ul class="treeview-menu">
@@ -109,9 +110,11 @@
 				<li class="menu-item session">
 					<div class="collapsible-header">
 						<a href="javascript:;">
-                     <i class="mr-2 zmdi zmdi-time"></i>
-                     <span>{{translation.session}}</span>   
-                  </a>
+							<i class="mr-2 zmdi zmdi-time"></i>
+							<span>{{translation.session}}</span>
+							<span>{{translation.session}}</span>
+							<span>{{translation.session}}</span>
+						</a>
 					</div>
 					<div class="collapsible-body">
 						<ul class="treeview-menu">
@@ -161,7 +164,7 @@
 <script type="text/javascript">
 	clang = localStorage.getItem("clang")
 
-	$('.appendUrl').each(function() {
+	$('.appendUrl').each(function () {
 		var href = $(this).attr('href');
 		$(this).attr("href", href + clang);
 	});
@@ -175,10 +178,10 @@
 
 	function logout() {
 		$.ajax({
-				url: "/session/logout",
-				type: "POST",
-			})
-			.done(function(data) {
+			url: "/session/logout",
+			type: "POST",
+		})
+			.done(function (data) {
 				window.location.href = '/session/login';
 			});
 	}
@@ -186,14 +189,14 @@
 	url = window.location.href;
 	pageName = url.split('/');
 	pageUrl = pageName[4];
-	if(pageName[4] == 'calendar?clang=en'){
+	if (pageName[4] == 'calendar?clang=en') {
 		pageUrl = 'calendar';
 	}
 	$('li.active').removeClass('active');
 	$('.' + pageUrl).addClass('active');
 	$('li .collapsible-body').removeAttr("style");
 	$('.' + pageUrl + ' .collapsible-body').addClass('d-block');
-	$('li .collapsible-header').on('click', function() {
+	$('li .collapsible-header').on('click', function () {
 		$('li .collapsible-body').removeClass('d-block');
 	});
 </script>
